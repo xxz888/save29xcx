@@ -7,15 +7,9 @@ Page({
     feed: [],
     feed_length: 0
   },
-  //事件处理函数
-  bindItemTap: function() {
-    wx.navigateTo({
-      url: '../discovery/discovery'
-    })
-  },
   bindQueTap: function() {
     wx.navigateTo({
-      url: '../question/question'
+      url: '../homeDetail/homeDetail'
     })
   },
   onLoad: function () {

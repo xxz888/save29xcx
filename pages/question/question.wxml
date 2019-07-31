@@ -1,73 +1,92 @@
-<!--question.wxml-->
-<view class="container">
-  <view class="question-wrp">
-    <view class="question-item">
-
-      <view class="imageTitleStyle" >
-            <image 
-            style="width:60rpx;height:60rpx;margin-top:10rpx;border-radius:60rpx"  
-            src="../../images/icon9.jpeg">
-            </image>
-            <view style="margin-left:20rpx">
-              <text>Hello树哥</text>
-            </view>
+<!--index.wxml-->
+<scroll-view 
+scroll-y="false"
+scroll-x="false"
+ class="container" 
+ bindscrolltoupper="upper"
+  upper-threshold="10" 
+  lower-threshold="5" 
+  bindscrolltolower="lower"  
+  scroll-into-view="{{toView}}" 
+  scroll-top="{{scrollTop}}">
+  <view class="search">
+      <view class="search-left">
+          <image src="../../images/xxz/搜索.png"></image>
+          <input  placeholder="Q&A" placeholder-class="search-placeholder"/>
       </view>
-       
-
-      <view class="que-title">
-        What are the attractions in China？
-      </view>
-      <view class="que-content">
-        I think hangzhou is the most beautiful city.The west lake in hangzhou is beautiful and the people are friendly.Alibaba group is also in hangzhou.
-      </view>
-    </view>
   </view>
-  <view class="answer-feed">
-    <view class="feed-item" wx:for="{{imgArray}}">
-      <view class="feed-source flex-wrp" style="flex-direction:row">
-        <view class="flex-item" style="flex-grow: 1;display: flex;">
-          <a class="">
-            <view class="avatar">
-              <image src="../../images/icon9.jpeg"></image>
-            </view>
-            <text>Hello树哥</text>
-          </a>
-        </view>
-        <view class="flex-item" bindtap="zanAction" style="flex-grow: 1;display: flex;justify-content: flex-end">
-            <view class="avatar_zan" >
-              <image src="../../images/xxz/selzan.png"></image>
-            </view>
-           <text class="count_zan">10</text>
-        </view>
-      </view>
-      <view class="feed-content">
-        <view class="answer-body">
-          <view>
-            <text class="answer-txt">{{inputText}}</text>
-          </view>
-          <view class="flex-wrp" style="flex-direction:row;padding:20rpx 10rpx 10rpx 10rpx">
-            <view class="flex-item" wx:for="{{imgArray}}">
-              <image style="width:215rpx;height:140rpx;border-radius: 5rpx" src="../../images/24213.jpg"></image>
-            </view>
-          </view>
-        </view>
-      </view>
+<!-- 第一行 -->
+  <view class="midView">
+    <view bindtap="bindItemTap" class="itemClass">
+      <image class="imageStyle" src="../../images/xxz/发布@2x.png"></image>
+      <text class="textStyle">Question</text>
+    </view>
+
+
+  <view bindtap="bindItemTap" class="itemClass">
+    <view style="display: flex">
+       <image class="imageStyleOther" src="../../images/xxz/锁定@2x.png"></image>
+       <text class="smallStyle">History</text>
+    </view>
+    <text class="textStyleOther">208 Questions</text>
     </view>
   </view>
 
 
-  <view class="answer-footer flex-wrp"  style="flex-direction:row;width:100%">
+<!-- 第二行 -->
+  <view class="midView">
+     <view bindtap="bindItemTap" class="itemClass">
+    <view style="display: flex">
+       <image class="imageStyleOther" src="../../images/xxz/锁定@2x.png"></image>
+       <text class="smallStyle">Tourism</text>
+    </view>
+    <text class="textStyleOther">8 Questions</text>
+    </view>
 
 
-  <view class="flex-item">
-   <button class="buttonStyle" bindtap="clickPost"  style="width:600rpx;font-size:24rpx;height100%">
-        Write dowm your thoughts
-   </button>
- </view>
-
-
-      <view class="flex-item">
-          <image style="width:50rpx;height:45rpx;margin:10rpx" src="../../images/xxz/添加图片1@2x.png"></image>
-     </view>
+  <view bindtap="bindItemTap" class="itemClass">
+    <view style="display: flex">
+       <image class="imageStyleOther" src="../../images/xxz/锁定@2x.png"></image>
+       <text class="smallStyle">Scenery</text>
+    </view>
+    <text class="textStyleOther">109 Questions</text>
+    </view>
   </view>
-</view>
+
+
+<!-- 第三行 -->
+  <view class="midView">
+    <view bindtap="bindItemTap" class="itemClass">
+    <view style="display: flex">
+       <image class="imageStyleOther" src="../../images/xxz/锁定@2x.png"></image>
+       <text class="smallStyle">The humanities</text>
+    </view>
+    <text class="textStyleOther">99 Questions</text>
+    </view>
+
+
+  <view bindtap="bindItemTap" class="itemClass">
+    <view style="display: flex">
+       <image class="imageStyleOther" src="../../images/xxz/锁定@2x.png"></image>
+       <text class="smallStyle">The popular sciences</text>
+    </view>
+    <text class="textStyleOther">29 Questions</text>
+    </view>
+  </view>
+
+
+
+
+  <view>
+    <button  bindtap="clickPost" class="subMitBtn">
+      Post Questioins
+    </button>
+  </view>
+
+
+
+
+
+
+</scroll-view>
+

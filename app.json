@@ -1,20 +1,18 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/discovery/discovery",
-    "pages/notify/notify",
-    "pages/chat/chat",
-    "pages/more/more",
+    "pages/home/home",
+    "pages/homeDetail/homeDetail",
+    "pages/me/me",
     "pages/answer/answer",
     "pages/question/question",
     "pages/Post/post",
     "pages/Talk/Talk"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#0068C4",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "SAVE29",
-    "navigationBarTextStyle": "white",
+    "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true
   },
   "tabBar": {
@@ -24,13 +22,13 @@
     "borderStyle": "white",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/home/home",
         "text": "Home",
         "iconPath": "images/tabbar/H_nol.png",
         "selectedIconPath": "images/tabbar/H_sel.png"
       },
       {
-        "pagePath": "pages/discovery/discovery",
+        "pagePath": "pages/question/question",
         "text": "Question",
         "iconPath": "images/tabbar/Q_nol.png",
         "selectedIconPath": "images/tabbar/Q_sel.png"
@@ -42,7 +40,7 @@
         "selectedIconPath": "images/tabbar/A_sel.png"
       },
       {
-        "pagePath": "pages/more/more",
+        "pagePath": "pages/me/me",
         "text": "Me",
         "iconPath": "images/tabbar/M_nol.png",
         "selectedIconPath": "images/tabbar/M_sel.png"

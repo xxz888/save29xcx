@@ -13,7 +13,7 @@
   color: #A4A4A4;
 }
 .container .search .search-left{
-    margin: 20rpx;
+    margin: 0rpx 20rpx 20rpx;
     background: #F7F7F7;
     border-radius: 30rpx;
     display: flex;

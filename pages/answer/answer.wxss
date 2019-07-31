@@ -14,7 +14,7 @@
   color: #A4A4A4;
 }
 .container .search .search-left{
-    margin: 20rpx;
+    margin: 0rpx 20rpx 20rpx;
     background: #F7F7F7;
     border-radius: 30rpx;
     display: flex;
@@ -92,7 +92,7 @@ overflow: hidden;
   color: #999999;
 }
 .subMitBtn{
-    margin-top: 100rpx;
+    margin-top: 40rpx;
     width: 90%;
     background:#FD999B;
     border:0;
