@@ -1,0 +1,45 @@
+/* pages/Post/post.wxss */
+.placeholderStyle{
+    font-size: 40rpx;
+}
+.textareaPostStyle{
+  width: 100%;
+  height: 50%;
+  margin: 0rpx;
+  padding: 0rpx;
+  margin-top: 20rpx;
+}
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction:row;
+  justify-content:space-around;
+  margin-top: 50rpx;
+}
+
+.item {
+  height: 200rpx;
+  width: 200rpx;
+
+}
+
+.item1 {
+
+}
+
+.item2 {
+
+}
+
+.item3 {
+
+}
+
+
+  .subMitBtn{
+    margin-top: 250rpx;
+    width: 90%;
+    background:#EAA4A5;
+    border:0;
+    color: white;
+  }

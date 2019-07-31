@@ -1,0 +1,92 @@
+<!--index.wxml-->
+<scroll-view 
+scroll-y="false"
+scroll-x="false"
+ class="container" 
+ bindscrolltoupper="upper"
+  upper-threshold="10" 
+  lower-threshold="5" 
+  bindscrolltolower="lower"  
+  scroll-into-view="{{toView}}" 
+  scroll-top="{{scrollTop}}">
+  <view class="search">
+      <view class="search-left">
+          <image src="../../images/xxz/搜索.png"></image>
+          <input  placeholder="Q&A" placeholder-class="search-placeholder"/>
+      </view>
+  </view>
+<!-- 第一行 -->
+  <view class="midView">
+    <view bindtap="bindItemTap" class="itemClass">
+      <image class="imageStyle" src="../../images/xxz/评论1@2x.png"></image>
+      <text class="textStyle">Answer</text>
+    </view>
+
+
+  <view bindtap="bindItemTap" class="itemClass">
+    <view style="display: flex">
+       <image class="imageStyleOther" src="../../images/xxz/锁定@2x.png"></image>
+       <text class="smallStyle">History</text>
+    </view>
+    <text class="textStyleOther">208 Answer</text>
+    </view>
+  </view>
+
+
+<!-- 第二行 -->
+  <view class="midView">
+     <view bindtap="bindItemTap" class="itemClass">
+    <view style="display: flex">
+       <image class="imageStyleOther" src="../../images/xxz/锁定@2x.png"></image>
+       <text class="smallStyle">Tourism</text>
+    </view>
+    <text class="textStyleOther">8 Answer</text>
+    </view>
+
+
+  <view bindtap="bindItemTap" class="itemClass">
+    <view style="display: flex">
+       <image class="imageStyleOther" src="../../images/xxz/锁定@2x.png"></image>
+       <text class="smallStyle">Scenery</text>
+    </view>
+    <text class="textStyleOther">109 Answer</text>
+    </view>
+  </view>
+
+
+<!-- 第三行 -->
+  <view class="midView">
+    <view bindtap="bindItemTap" class="itemClass">
+    <view style="display: flex">
+       <image class="imageStyleOther" src="../../images/xxz/锁定@2x.png"></image>
+       <text class="smallStyle">The humanities</text>
+    </view>
+    <text class="textStyleOther">99 Answer</text>
+    </view>
+
+
+  <view bindtap="bindItemTap" class="itemClass">
+    <view style="display: flex">
+       <image class="imageStyleOther" src="../../images/xxz/锁定@2x.png"></image>
+       <text class="smallStyle">The popular sciences</text>
+    </view>
+    <text class="textStyleOther">29 Answer</text>
+    </view>
+  </view>
+
+
+
+
+  <view>
+    <button  bindtap="clickPost" class="subMitBtn">
+      Answer questioins
+    </button>
+  </view>
+
+
+
+
+
+
+</scroll-view>
+
