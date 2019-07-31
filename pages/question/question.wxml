@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<scroll-view 
+<scroll-view
 scroll-y="false"
 scroll-x="false"
  class="container" 
@@ -11,21 +11,21 @@ scroll-x="false"
   scroll-top="{{scrollTop}}">
   <view class="search">
       <view class="search-left">
-          <image src="../../images/xxz/搜索.png"></image>
+          <image src="../../images/搜索.png"></image>
           <input  placeholder="Q&A" placeholder-class="search-placeholder"/>
       </view>
   </view>
 <!-- 第一行 -->
   <view class="midView">
     <view bindtap="bindItemTap" class="itemClass">
-      <image class="imageStyle" src="../../images/xxz/发布@2x.png"></image>
+      <image class="imageStyle" src="../../images/发布@2x.png"></image>
       <text class="textStyle">Question</text>
     </view>
 
 
   <view bindtap="bindItemTap" class="itemClass">
     <view style="display: flex">
-       <image class="imageStyleOther" src="../../images/xxz/锁定@2x.png"></image>
+       <image class="imageStyleOther" src="../../images/锁定@2x.png"></image>
        <text class="smallStyle">History</text>
     </view>
     <text class="textStyleOther">208 Questions</text>
@@ -37,7 +37,7 @@ scroll-x="false"
   <view class="midView">
      <view bindtap="bindItemTap" class="itemClass">
     <view style="display: flex">
-       <image class="imageStyleOther" src="../../images/xxz/锁定@2x.png"></image>
+       <image class="imageStyleOther" src="../../images/锁定@2x.png"></image>
        <text class="smallStyle">Tourism</text>
     </view>
     <text class="textStyleOther">8 Questions</text>
@@ -46,7 +46,7 @@ scroll-x="false"
 
   <view bindtap="bindItemTap" class="itemClass">
     <view style="display: flex">
-       <image class="imageStyleOther" src="../../images/xxz/锁定@2x.png"></image>
+       <image class="imageStyleOther" src="../../images/锁定@2x.png"></image>
        <text class="smallStyle">Scenery</text>
     </view>
     <text class="textStyleOther">109 Questions</text>
@@ -58,7 +58,7 @@ scroll-x="false"
   <view class="midView">
     <view bindtap="bindItemTap" class="itemClass">
     <view style="display: flex">
-       <image class="imageStyleOther" src="../../images/xxz/锁定@2x.png"></image>
+       <image class="imageStyleOther" src="../../images/锁定@2x.png"></image>
        <text class="smallStyle">The humanities</text>
     </view>
     <text class="textStyleOther">99 Questions</text>
@@ -67,7 +67,7 @@ scroll-x="false"
 
   <view bindtap="bindItemTap" class="itemClass">
     <view style="display: flex">
-       <image class="imageStyleOther" src="../../images/xxz/锁定@2x.png"></image>
+       <image class="imageStyleOther" src="../../images/锁定@2x.png"></image>
        <text class="smallStyle">The popular sciences</text>
     </view>
     <text class="textStyleOther">29 Questions</text>

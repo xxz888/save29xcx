@@ -16,7 +16,7 @@ Page({
       contract_info: '',//弹出框input值
       myDate: '',
       role: false,
-      img: '../../images/xxz/头像2@2x.png',
+      img: '../../images/头像2@2x.png',
     }
     ],//返回数据
     minutes: '',//分钟间隔
@@ -112,14 +112,14 @@ Page({
         contract_info: that.data.contract_info,
         myDate: mydata,
         role: true,
-        img: "../../images/xxz/头像@2x.png",
+        img: "../../images/头像@2x.png",
       }, {
           content: '【系统消息】：您的反馈已收到！',
           content_type: 0,
           contract_info: '',
           myDate: '',
           role: false,
-          img: "../../images/xxz/头像2@2x.png"
+          img: "../../images/头像2@2x.png"
         })
 
       //修改feedback,设置addaddinput为[]值为空

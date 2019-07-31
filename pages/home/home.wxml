@@ -10,7 +10,7 @@ scroll-y="true"
   scroll-top="{{scrollTop}}">
   <view class="search">
       <view class="search-left">
-          <image src="../../images/xxz/搜索.png"></image>
+          <image src="../../images/搜索.png"></image>
           <input  placeholder="Q&A" placeholder-class="search-placeholder"/>
       </view>
 

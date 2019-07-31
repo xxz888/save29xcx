@@ -40,7 +40,7 @@
       </view>
       <view class="footadd" >
         <view bindtap="gotoShow" class="addbroder">
-            <image src="../../images/xxz/添加图片1@2x.png"/>
+            <image src="../../images/添加图片1@2x.png"/>
         </view>
       </view>
   </view>

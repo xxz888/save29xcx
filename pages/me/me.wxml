@@ -4,7 +4,7 @@
     <view class="avatar flex-item">
           <image 
           class="userinfo-avatar" 
-          src="../../images/xxz/头像@2x.png" 
+          src="../../images/头像@2x.png" 
           background-size="cover">
       </image>
     </view>
@@ -19,7 +19,7 @@
       <image 
           bindtap="bindErWeiMa" 
           class="userinfo-avatar-other"  
-          src="../../images/xxz/QR@2x.png">
+          src="../../images/QR@2x.png">
       </image>
       <button 
           class="userinfo-avatar-button" 
@@ -35,78 +35,78 @@
   <view class="my">
     <view class="my-item flex-wrp" style="border-bottom:0">
       <view class="myitem-icon flex-item">
-        <image src="../../images/xxz/发布1@2x.png"></image>
+        <image src="../../images/发布1@2x.png"></image>
       </view>
       <view bindtap="indexAction" class="myitem-name flex-item">
         <text>Post Question</text>
       </view>
       <view class="myitem-icon-right flex-item">
-        <image src="../../images/xxz/返回键1@2x.png"></image>
+        <image src="../../images/返回键1@2x.png"></image>
       </view>
     </view>
 
 
     <view class="my-item flex-wrp">
       <view class="myitem-icon flex-item">
-        <image src="../../images/xxz/评论@2x.png"></image>
+        <image src="../../images/评论@2x.png"></image>
       </view>
       <view bindtap="indexAction" class="myitem-name flex-item">
         <text>Answer Question</text>
       </view>
       <view class="myitem-icon-right flex-item">
-        <image src="../../images/xxz/返回键1@2x.png"></image>
+        <image src="../../images/返回键1@2x.png"></image>
       </view>
     </view>
 
 
     <view class="my-item flex-wrp">
       <view class="myitem-icon flex-item">
-        <image src="../../images/xxz/收藏1@2x.png"></image>
+        <image src="../../images/收藏1@2x.png"></image>
       </view>
       <view bindtap="indexAction" class="myitem-name flex-item">
         <text>Collection</text>
       </view>
       <view class="myitem-icon-right flex-item">
-        <image src="../../images/xxz/返回键1@2x.png"></image>
+        <image src="../../images/返回键1@2x.png"></image>
       </view>
     </view>
 
 
     <view class="my-item flex-wrp">
       <view class="myitem-icon flex-item">
-        <image src="../../images/xxz/联系客服@2x.png"></image>
+        <image src="../../images/联系客服@2x.png"></image>
       </view>
       <view bindtap="talkAction" class="myitem-name flex-item">
         <text>About SAVE29</text>
       </view>
       <view class="myitem-icon-right flex-item">
-        <image src="../../images/xxz/返回键1@2x.png"></image>
+        <image src="../../images/返回键1@2x.png"></image>
       </view>
     </view>
 
 
     <view class="my-item flex-wrp " style="border-bottom:0">
       <view class="myitem-icon flex-item">
-        <image src="../../images/xxz/投诉意见@2x.png"></image>
+        <image src="../../images/投诉意见@2x.png"></image>
       </view>
       <view bindtap="talkAction" class="myitem-name flex-item">
         <text>Feedback problems</text>
       </view>
       <view class="myitem-icon-right flex-item">
-        <image src="../../images/xxz/返回键1@2x.png"></image>
+        <image src="../../images/返回键1@2x.png"></image>
       </view>
     </view>
 
 
     <view class="my-item flex-wrp">
       <view class="myitem-icon flex-item">
-        <image src="../../images/xxz/联系客服@2x.png"></image>
+        <image src="../../images/联系客服@2x.png"></image>
       </view>
       <view bindtap="talkAction" class="myitem-name flex-item">
         <text>Customer service</text>
       </view>
       <view class="myitem-icon-right flex-item">
-        <image src="../../images/xxz/返回键1@2x.png"></image>
+        <image src="../../images/返回键1@2x.png"></image>
       </view>
     </view>
   </view>

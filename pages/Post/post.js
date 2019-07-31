@@ -6,9 +6,9 @@ Page({
    */
   data: {
     placeholderImg:"../../images/tabbar/添加图片.png",
-    photo1: "../../images/xxz/添加图片.png",
-    photo2: "../../images/xxz/添加图片.png",
-    photo3: "../../images/xxz/添加图片.png",
+    photo1: "../../images/添加图片.png",
+    photo2: "../../images/添加图片.png",
+    photo3: "../../images/添加图片.png",
 
   },
   gotoShow:function(event){
