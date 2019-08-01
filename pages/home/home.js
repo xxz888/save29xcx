@@ -1,106 +1,74 @@
 //index.js
-
 var util = require('../../utils/util.js')
 var app = getApp()
 Page({
   data: {
     feed: [],
-    feed_length: 0
+    feed_length: 0,
+    page:1
   },
-  bindQueTap: function() {
+  bindQueTap: function(event) {
+    var startid = event.currentTarget.dataset.startid;
     wx.navigateTo({
-      url: '../homeDetail/homeDetail'
+      url: '../homeDetail/homeDetail?id=' + startid
     })
   },
   onLoad: function () {
-    console.log('onLoad')
-    var that = this
-    //调用应用实例的方法获取全局数据
-    this.getData();
+    this.getVCData(this.data.page);
+  },
+  getVCData:function(page){
+    console.log(page);
+    var par = 'users/post/?type=-1&page=' + page;
+    util.SEND(par, "GET", null, res => {
+      if(res.data.length == 0){
+        wx.showToast({
+          title: '已经加载所有',
+          icon: 'none',
+          duration: 1000
+        })
+        return;
+      }
+      if(page == 1){
+        this.setData({
+          feed: res["data"],
+          feed_length: res["data"].length
+        });
+      }else{
+        this.setData({
+          feed: this.data.feed.concat(res["data"]),
+          feed_length: res["data"].length
+        });
+        wx.showToast({
+          title: '加载成功',
+          icon: 'success',
+          duration: 1000
+        })
+      }
+  
+    }, res => {
+      console.log(res);
+    })
   },
   upper: function () {
+    this.data.page = 1;
     wx.showNavigationBarLoading()
-    this.refresh();
-    console.log("upper");
-    setTimeout(function(){wx.hideNavigationBarLoading();wx.stopPullDownRefresh();}, 2000);
+    this.getVCData(this.data.page);
+    setTimeout(
+      function(){
+        wx.hideNavigationBarLoading();
+        wx.stopPullDownRefresh()
+        }, 1000);
   },
   lower: function (e) {
+    this.data.page += 1;
     wx.showNavigationBarLoading();
-    var that = this;
-    setTimeout(function(){wx.hideNavigationBarLoading();that.nextLoad();}, 1000);
-    console.log("lower")
+    var self = this;
+    setTimeout(function () { 
+      wx.hideNavigationBarLoading(); 
+      self.getVCData(self.data.page);
+      }, 
+      1000);
   },
-  //scroll: function (e) {
-  //  console.log("scroll")
-  //},
-
-  //网络请求数据, 实现首页刷新
-  refresh0: function(){
-    var index_api = '';
-    util.getData(index_api)
-        .then(function(data){
-          //this.setData({
-          //
-          //});
-          console.log(data);
-        });
-  },
-
-  //使用本地 fake 数据实现刷新效果
-  getData: function(){
-    var feed = util.getData2();
-    console.log("loaddata");
-    var feed_data = feed.data;
-    this.setData({
-      feed:feed_data,
-      feed_length: feed_data.length
-    });
-  },
-  refresh: function(){
-    wx.showToast({
-      title: '刷新中',
-      icon: 'loading',
-      duration: 0
-    });
-    var feed = util.getData2();
-    console.log("loaddata");
-    var feed_data = feed.data;
-    this.setData({
-      feed:feed_data,
-      feed_length: feed_data.length
-    });
-    setTimeout(function(){
-      wx.showToast({
-        title: '刷新成功',
-        icon: 'success',
-        duration: 0
-      })
-    },0)
-
-  },
-
-  //使用本地 fake 数据实现继续加载效果
-  nextLoad: function(){
-    wx.showToast({
-      title: '加载中',
-      icon: 'loading',
-      duration: 0
-    })
-    var next = util.getNext();
-    console.log("continueload");
-    var next_data = next.data;
-    this.setData({
-      feed: this.data.feed.concat(next_data),
-      feed_length: this.data.feed_length + next_data.length
-    });
-    setTimeout(function(){
-      wx.showToast({
-        title: '加载成功',
-        icon: 'success',
-        duration: 0
-      })
-    },0)
-  }
 
 
 })

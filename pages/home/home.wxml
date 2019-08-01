@@ -1,62 +1,54 @@
- <!--index.wxml-->
-<scroll-view 
-scroll-y="true"
- class="container" 
- bindscrolltoupper="upper"
-  upper-threshold="10" 
-  lower-threshold="5" 
-  bindscrolltolower="lower"  
-  scroll-into-view="{{toView}}" 
-  scroll-top="{{scrollTop}}">
+<!--index.wxml-->
+<scroll-view scroll-y="true" class="container" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
   <view class="search">
-      <view class="search-left">
-          <image src="../../images/搜索.png"></image>
-          <input  placeholder="Q&A" placeholder-class="search-placeholder"/>
-      </view>
-
+    <view class="search-left">
+      <image src="../../images/搜索.png"></image>
+      <input placeholder="Q&A" placeholder-class="search-placeholder" />
+    </view>
   </view>
-            <view style="width:100%;height:11rpx;background-color:#F7F7F7;margin:0">
-      </view>
-    <block wx:for="{{feed}}" 
-           wx:key="idx"
-           wx:for-index="idx" 
-           wx:for-item="item" 
-           data-idx="{{idx}}">
-        <view class="feed-item">
-            <view class="feed-content">
-                 <!-- 提问的问题 -->
-                <view class="question" qid="{{question_id}}" bindtap="bindQueTap">
-                    <a class="question-link">
-                        <text>{{item.question}}</text>
-                    </a>
-                </view>
-
-
-                <!-- 提问的回答,纯文字 -->
-                <view wx:if='{{item.question_id == 1}}' class="answer-body">
-                    <view bindtap="bindQueTap">
-                      <text class="answer-txt" aid="{{answer_id}}">{{item.answer_ctnt}}</text>
-                    </view>
-                </view>
-                <!-- 提问的回答,文字和图片 -->
-                <view wx:if='{{item.question_id != 1}}' 
-                      class="answer-body flex-wrp" 
-                      style="flex-direction:row;"  
-                      bindtap="bindQueTap">
-                    <!-- 回答的文字  -->
-                    <view >
-                      <text class="answer-txt"
-                            style="width:470rpx:height:155rpx;" 
-                            aid="{{answer_id}}">{{item.answer_ctnt}}
-                      </text>
-                    </view>
-                    <!-- 回答的图片 -->
-                    <view class="flex-item" >
-                       <image class="answer-image"  src="../../images/24213.jpg"></image>
-                    </view>
-                </view>
-            </view>
+  <view style="width:100%;height:11rpx;background-color:#F7F7F7;margin:0">
+  </view>
+  <block wx:for="{{feed}}" wx:key="idx" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+    <view class="feed-item" 
+          bindtap="bindQueTap"
+          data-startid = "{{item.id}}">
+      <view class="feed-content">
+        <!-- 提问的问题 -->
+        <view 
+        class="question" 
+        qid="{{item.id}}" 
+        
+        
+        >
+          <a class="question-link">
+            <text>{{item.detail}}</text>
+          </a>
         </view>
-    </block>
-</scroll-view>
 
+
+        <!-- 提问的回答,纯文字 -->
+        <view wx:if='{{item.id == 1}}' class="answer-body">
+          <view>
+            <text class="answer-txt" aid="{{item.id}}">{{item.detail}}</text>
+          </view>
+        </view>
+        <!-- 提问的回答,文字和图片 -->
+        <view 
+        wx:if='{{item.id != 1}}' 
+        class="answer-body flex-wrp" 
+        style="flex-direction:row;" 
+        >
+          <!-- 回答的文字  -->
+          <view>
+            <text class="answer-txt" style="width:470rpx:height:155rpx;" aid="{{item.id}}">{{item.detail}}
+                      </text>
+          </view>
+          <!-- 回答的图片 -->
+          <view class="flex-item">
+            <image class="answer-image" src="{{item.photo}}"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</scroll-view>

@@ -6,6 +6,7 @@
     "pages/answer/answer",
     "pages/question/question",
     "pages/Post/post",
+    "pages/ask/question-ask",
     "pages/Talk/Talk"
   ],
   "window": {

@@ -19,8 +19,6 @@ function getScale(){
     }
   })
 }
-
-
 function formatNumber(n) {
   n = n.toString()
   return n[1] ? n : '0' + n
@@ -34,6 +32,26 @@ var index = require('../data/data_index.js')
 var index_next = require('../data/data_index_next.js')
 var discovery = require('../data/data_discovery.js')
 var discovery_next = require('../data/data_discovery_next.js')
+
+
+
+function SEND(url, method, data, success, fail) {
+  wx.request({
+    url: 'http://thegdlife.com:8001/'+url,
+    header: {
+      'content-type': 'application/json',
+    },
+    method: method,
+    data: data,
+    success(res) {
+      success(res);
+    },
+    fail(res) {
+      fail(res);
+    }
+  });
+}
+
 
 function getData(url){
   return new Promise(function(resolve, reject){
@@ -55,6 +73,7 @@ function getData(url){
   })
 }
 
+
 function getData2(){
   return index.index;
 }
@@ -72,12 +91,12 @@ function discoveryNext(){
 }
 
 
-
 module.exports.getData = getData;
 module.exports.getData2 = getData2;
 module.exports.getNext = getNext;
 module.exports.getDiscovery = getDiscovery;
 module.exports.discoveryNext = discoveryNext;
+module.exports.SEND = SEND;
 
 
 

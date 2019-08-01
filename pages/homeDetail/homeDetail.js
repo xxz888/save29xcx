@@ -7,7 +7,9 @@ Page({
     motto: '',
     userInfo: {},
     imgArray:['','',''],
-    inputText:" I think hangzhou is the most beautiful city.The west lake in hangzhou is beautiful and the people are friendly.Alibaba group is also in hangzhou."
+    inputText:" I think hangzhou is the most beautiful city.The west lake in hangzhou is beautiful and the people are friendly.Alibaba group is also in hangzhou.",
+    //上个界面传过来的id值
+    startid:''
   },
   //事件处理函数
   bindItemTap: function() {
@@ -28,13 +30,14 @@ Page({
     })
 
   },
-  onLoad: function () {
+  onLoad: function (options) {
     console.log('onLoad')
-    var that = this
+    console.log(options.id);
+    var self = this
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo){
       //更新数据
-      that.setData({
+      self.setData({
         userInfo:userInfo
       })
     })

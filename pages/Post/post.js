@@ -18,15 +18,23 @@ Page({
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
       success(res) {
+
+
         // tempFilePath可以作为img标签的src属性显示图片
-        const tempFilePaths = res.tempFilePaths[0];
+        const tempFilePaths = res.tempFilePaths;
         var index = event.currentTarget.dataset.index;
         if(index == 1){
-          self.photo1 = tempFilePaths;
+          self.setData({
+            photo1: res.tempFilePaths
+          })
         }else if(index == 2){
-          self.photo2 = tempFilePaths;
+          self.setData({
+            photo2: res.tempFilePaths
+          })        
         }else{
-          self.photo3 = tempFilePaths;
+          self.setData({
+            photo3: res.tempFilePaths
+          })
         }
       }
     })

@@ -27,7 +27,7 @@
       </view>
   </view>
   <view class="answer-feed">
-    <view class="feed-item" wx:for="{{imgArray}}">
+    <view class="feed-item" wx:for="{{imgArray}}" >
       <view class="feed-source flex-wrp" style="flex-direction:row">
         <view class="flex-item" style="flex-grow: 1;display: flex;">
           <a class="">
@@ -50,7 +50,7 @@
             <text class="answer-txt">{{inputText}}</text>
           </view>
           <view class="flex-wrp" style="flex-direction:row;padding:20rpx 10rpx 10rpx 10rpx">
-            <view class="flex-item" wx:for="{{imgArray}}">
+            <view class="flex-item" wx:for="{{imgArray}}" wx:key="{{imgArray}}">
               <image style="width:215rpx;height:140rpx;border-radius: 5rpx" src="../../images/24213.jpg"></image>
             </view>
           </view>
