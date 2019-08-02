@@ -1,38 +1,18 @@
 <view class="container more">
-  <view wx:if="{{islogin==false}}" class="user flex-wrp">
-    <button bindtap="loginAction">请登录</button>
-  </view>
+  <view class="user flex-wrp">
 
-  <view wx:if="{{islogin==true}}" class="user flex-wrp">
-    <view class="avatar flex-item">
-          <image 
+    <view class="flex-item text1Style">
+      <text class="">Upload pictures</text>
+    </view>
+
+  <view class="flex-item" style="text-align:right;">
+    <image 
           class="userinfo-avatar" 
-          src="{{userInfo.photo}}" 
+          src="../../images/头像@2x.png" 
           background-size="cover">
-      </image>
-    </view>
-
-    <view class="user-info flex-item" style="text-align: left;margin-left:-20rpx">
-      <text class="userinfo-nickname">{{userInfo.username}}</text>
-      <text bindtap="editorAction" class="edit">>> Editor</text>
-      <text class="jifenStyle">Integral</text>
-    </view>
+    </image>
+  </view>
     
-    <view class="user-info flex-item" style="text-align: right">
-      <image 
-          bindtap="bindErWeiMa" 
-          class="userinfo-avatar-other"  
-          src="../../images/QR@2x.png">
-      </image>
-      <button 
-          class="userinfo-avatar-button" 
-          open-type="share" 
-          plain="true">
-      </button>
-
-      <text style="display:block;font-size:27rpx;margin-top:5rpx;align-text:right">Invite Friends</text>
-    </view>
-
   </view>
 
   <view class="my">

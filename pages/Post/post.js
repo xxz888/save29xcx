@@ -18,10 +18,38 @@ Page({
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
       success(res) {
-
+        
 
         // tempFilePath可以作为img标签的src属性显示图片
         const tempFilePaths = res.tempFilePaths;
+
+        wx.uploadFile({
+          url: 'http://192.168.101.22:8001/users/test/', 
+          filePath: tempFilePaths[0],
+          name: 'file',
+          formData: {
+            'user': 'ios'
+          },
+          success: function (res) {
+            var data = res.data
+            //do something
+            console.log(res);
+            self.setData({
+              photo1: data
+            })
+          }
+        })
+        return;
+
+
+
+
+
+
+
+
+
+
         var index = event.currentTarget.dataset.index;
         if(index == 1){
           self.setData({

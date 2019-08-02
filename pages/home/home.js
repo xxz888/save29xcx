@@ -8,6 +8,10 @@ Page({
     page:1
   },
   bindQueTap: function(event) {
+    wx.navigateTo({
+      url: '../login/login'
+    })
+    return;
     var startid = event.currentTarget.dataset.startid;
     wx.navigateTo({
       url: '../homeDetail/homeDetail?id=' + startid
@@ -18,6 +22,7 @@ Page({
   },
   getVCData:function(page){
     console.log(page);
+    return;
     var par = 'users/post/?type=-1&page=' + page;
     util.SEND(par, "GET", null, res => {
       if(res.data.length == 0){

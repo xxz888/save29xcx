@@ -4,20 +4,15 @@ var app = getApp()
 Page({
   data: {
     motto: 'Hello World',
-    userInfo: {},
-    islogin:false
+    userInfo: {}
   },
-
   //事件处理函数
-  bindViewTap: function() {
+  bindViewTap: function () {
     wx.navigateTo({
       url: ''
     })
   },
-  loginAction:function(){
-    util.wxlogin();
-  },
-  bindErWeiMa:function(){
+  bindErWeiMa: function () {
     wx.showToast({
       title: '开发中',
       icon: 'none',
@@ -44,10 +39,12 @@ Page({
       url: '../Talk/Talk'
     })
   },
-  editorAction:function(){
-    // wx.navigateTo({
-    //   url: '../person/person'
-    // })
+  editorAction: function () {
+    wx.showToast({
+      title: '开发中',
+      icon: 'none',
+      duration: 1000
+    })
 
   },
   bindShare: function () {
@@ -74,13 +71,15 @@ Page({
       }
     }
   },
-  onShow:function(){
-    var islog = util.getloginStatus();
-    this.setData({
-      islogin: islog ? true : false ,
-      userInfo:islog
+  onLoad: function () {
+    console.log('onLoad')
+    var that = this
+    //调用应用实例的方法获取全局数据
+    app.getUserInfo(function (userInfo) {
+      //更新数据
+      that.setData({
+        userInfo: userInfo
+      })
     })
-  },
-  onLoad: function () {}
- 
+  }
 })
