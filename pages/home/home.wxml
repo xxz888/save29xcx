@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<scroll-view scroll-y="true" class="container" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+<scroll-view scroll-y="true" class="container" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
 
 
   <view class="search">
@@ -13,41 +13,37 @@
   <block wx:for="{{feed}}" wx:key="idx" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
     <view class="feed-item" 
           bindtap="bindQueTap"
-          data-startid = "{{item.id}}">
+          data-startdic = "{{item}}">
       <view class="feed-content">
         <!-- 提问的问题 -->
-        <view 
-        class="question" 
-        qid="{{item.id}}" 
-        
-        
-        >
+        <!-- <view class="question">
           <a class="question-link">
-            <text>{{item.detail}}</text>
+            <text>{{item.details}}</text>
           </a>
-        </view>
+        </view> -->
 
 
         <!-- 提问的回答,纯文字 -->
-        <view wx:if='{{item.id == 1}}' class="answer-body">
+        <view wx:if='{{item.pic_list.length == 0}}' class="answer-body">
           <view>
-            <text class="answer-txt" aid="{{item.id}}">{{item.detail}}</text>
+            <text class="answer-txt" aid="{{item.id}}">{{item.details}}</text>
           </view>
         </view>
         <!-- 提问的回答,文字和图片 -->
         <view 
-        wx:if='{{item.id != 1}}' 
+        wx:if='{{item.pic_list.length != 0}}' 
         class="answer-body flex-wrp" 
         style="flex-direction:row;" 
         >
           <!-- 回答的文字  -->
           <view>
-            <text class="answer-txt" style="width:470rpx:height:155rpx;" aid="{{item.id}}">{{item.detail}}
-                      </text>
+            <text class="answer-txt"  aid="{{item.id}}">{{item.details}}</text>
           </view>
           <!-- 回答的图片 -->
           <view class="flex-item">
-            <image class="answer-image" src="{{item.photo}}"></image>
+            <image 
+            class="answer-image" 
+            src="{{'http://192.168.101.22:8001/' + item.pic_list[0].picture}}"></image>
           </view>
         </view>
       </view>

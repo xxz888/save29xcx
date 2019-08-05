@@ -7,14 +7,16 @@ var discovery_next = require('../data/data_discovery_next.js')
 
 //封装请求组件
 function SEND(path, method, data, success, fail) {
-
+  var par = this.getUserInfo();
+  var headerDic = {'content-type': 'application/json'};
+  if(par.token){
+    headerDic.Authorization = "JWT " + par.token;
+  }
   var testUrl   =   "http://192.168.101.22:8001/";
   var formalUrl =   "http://thegdlife.com:8001/";
   wx.request({
     url: testUrl + path,
-    header: {
-      'content-type': 'application/json',
-    },
+    header: headerDic,
     method: method,
     data: data,
     success(res) {
@@ -27,14 +29,14 @@ function SEND(path, method, data, success, fail) {
 }
 //根据登录状态，做的登录操作
 function wxlogin(){
-  if(this.getloginStatus != "1"){
+  if(this.getUserInfo){
     wx.navigateTo({
       url: '../login/login'
     })
   }
 }
 //获取登录状态
-function getloginStatus() {
+function getUserInfo() {
   var status = wx.getStorageSync("userInfo");
   return status;
 }
@@ -125,7 +127,7 @@ module.exports.getDiscovery = getDiscovery;
 module.exports.discoveryNext = discoveryNext;
 module.exports.SEND = SEND;
 module.exports.wxlogin = wxlogin;
-module.exports.getloginStatus = getloginStatus;
+module.exports.getUserInfo = getUserInfo;
 
 
 

@@ -8,22 +8,17 @@ Page({
     page:1
   },
   bindQueTap: function(event) {
+    var startdic = event.currentTarget.dataset.startdic;
+    let data = JSON.stringify(startdic);
     wx.navigateTo({
-      url: '../login/login'
-    })
-    return;
-    var startid = event.currentTarget.dataset.startid;
-    wx.navigateTo({
-      url: '../homeDetail/homeDetail?id=' + startid
+      url: '../homeDetail/homeDetail?startdic=' + data
     })
   },
   onLoad: function () {
     this.getVCData(this.data.page);
   },
   getVCData:function(page){
-    console.log(page);
-    return;
-    var par = 'users/post/?type=-1&page=' + page;
+    var par = 'users/question?type=0&page=' + page ;
     util.SEND(par, "GET", null, res => {
       if(res.data.length == 0){
         wx.showToast({
@@ -31,7 +26,6 @@ Page({
           icon: 'none',
           duration: 1000
         })
-        return;
       }
       if(page == 1){
         this.setData({
@@ -43,11 +37,6 @@ Page({
           feed: this.data.feed.concat(res["data"]),
           feed_length: res["data"].length
         });
-        wx.showToast({
-          title: '加载成功',
-          icon: 'success',
-          duration: 1000
-        })
       }
   
     }, res => {
@@ -55,7 +44,9 @@ Page({
     })
   },
   upper: function () {
-    this.data.page = 1;
+    this.setData({
+      page:1
+    })
     wx.showNavigationBarLoading()
     this.getVCData(this.data.page);
     setTimeout(
@@ -65,7 +56,9 @@ Page({
         }, 1000);
   },
   lower: function (e) {
-    this.data.page += 1;
+    this.setData({
+      page: this.data.page++
+    })
     wx.showNavigationBarLoading();
     var self = this;
     setTimeout(function () { 

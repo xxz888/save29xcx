@@ -24,8 +24,6 @@
   display: inline-block;
   width: 50rpx;
   height: 50rpx;
-  margin-left: 20rpx;
-  margin-right: 55rpx;
   margin-top:15rpx;
   background-size: 100% 100% ;
    border: 0;
@@ -47,11 +45,16 @@
   flex: 1;
   display: inline-block;
   width: 60rpx;
-  height: 50rpx;
-  font-size: 18rpx;
-  background-color: red
+  height: 60rpx;
+
 }
 
+.userinfo-avatar-button image{
+  width: 60rpx;
+  height: 60rpx;
+  margin: 0;
+  padding: 0;
+}
 .control {
     flex: 1;
     display: inline-block;
@@ -69,9 +72,9 @@
   background-image:url('../../images/分享@2x.png');
   background-size:100% 100%;
   background-repeat:no-repeat;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
 .user .user-info1{
   /* flex: 5; */
@@ -79,7 +82,8 @@
 }
 .user .user-info{
   /* flex: 5; */
-  text-align: center;
+  text-align: left;
+  margin-left: 10rpx;
 }
 .user .user-info text{
   /* display: block; */
@@ -137,4 +141,17 @@
 }
 .my .my-item:last-child .myitem-name{
   border-bottom: none;
+}
+
+.share-btn {
+flex: 1;
+display: inline-block;
+padding: 0;
+background: none;
+position: static;
+width:50rpx;
+height: 50rpx;
+margin-left: 40rpx;
+margin-right: 20rpx;
+
 }

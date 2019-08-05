@@ -4,11 +4,7 @@ Page({
   data: {
     navTab: ["推荐", "圆桌", "热门", "收藏", "热门", "收藏"],
     currentNavtab: "0",
-    imgUrls: [
-      '../../images/24213.jpg',
-      '../../images/24280.jpg',
-      '../../images/1444983318907-_DSC1826.jpg'
-    ],
+    imgUrls: [],
     indicatorDots: false,
     autoplay: true,
     interval: 5000,
@@ -23,14 +19,14 @@ Page({
     this.refresh();
   },
   clickPost: function () {
-    wx.navigateTo({
-      url: '../Post/post'
+    wx.switchTab({
+      url: '../home/home'
     })
   },
   //事件处理函数
   bindItemTap: function () {
-    wx.navigateTo({
-      url: '../question/question'
+    wx.switchTab({
+      url: '../home/home'
     })
   },
   switchTab: function (e) {

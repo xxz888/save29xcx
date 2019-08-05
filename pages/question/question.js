@@ -24,13 +24,13 @@ Page({
   },
   clickPost: function () {
     wx.navigateTo({
-      url: '../Post/post'
+      url: '../Post/post?type=q'
     })
   },
   //事件处理函数
   bindItemTap: function () {
-    wx.navigateTo({
-      url: '../question/question-ask'
+    wx.switchTab({
+      url: '../home/home'
     })
   },
   switchTab: function(e){

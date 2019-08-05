@@ -20,9 +20,8 @@ Page({
         //调用微信获取个人资料
         wx.getUserInfo({
           success: function (res) {
-            //缓存个人资料的信息
-            getApp().globalData.userInfo = res.userInfo
-            typeof cb == "function" && cb(that.globalData.userInfo)
+            //缓存登录个人信息
+            wx.setStorageSync("userInfo", res.data);
             //从数据库获取用户信息,并且请求登录接口
             that.queryUsreInfo();
           },
@@ -63,7 +62,7 @@ Page({
   registerUserAction: function () {
     var that = this;
     var url = 'users/user/';
-    var par = getApp().globalData.userInfo;
+    var par = this.getUserInfo();
     par.open_id = that.open_id;
     util.SEND(url, "POST", par, res => {
       that.loginSuccessFinishAction(res);
@@ -72,7 +71,7 @@ Page({
 
   //登录成功后跳转首页
   loginSuccessFinishAction:function(res){
-    //缓存登录状态 1登录 0未登录
+    //缓存登录信息
     wx.setStorageSync("userInfo", res.data);
     //用户已经授权过并且请求服务器成功，跳转首界面
     wx.switchTab({

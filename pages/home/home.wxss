@@ -37,14 +37,21 @@
 }
 
 .answer-image{
-  width:228rpx;height:155rpx;margin:0 5rpx 0 20rpx;border-radius:8rpx
+  width:228rpx;
+  height:155rpx;
+  margin:0 5rpx 0 20rpx;
+  border-radius:8rpx;
+
 }
 .answer-txt{
+
+width: 450rpx;  
 display: -webkit-box;  
 word-break: break-all;
 text-overflow: ellipsis;  
 overflow: hidden;           
 -webkit-box-orient: vertical;   
 -webkit-line-clamp: 4;    
+
 }
 /*feed-item part is in app.wxss for multiplexing*/

@@ -8,6 +8,7 @@
             auto-height='true'
             placeholder-class='placeholderStyle'
             maxlength = '-1'
+            bindinput = "bindinput"
   ></textarea>
 
 
@@ -26,7 +27,7 @@
 </view>
 
   <view>
-    <button  class="subMitBtn">
+    <button  bindtap="submitAction" class="subMitBtn">
       Submit
     </button>
   </view>

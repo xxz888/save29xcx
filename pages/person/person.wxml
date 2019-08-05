@@ -5,91 +5,54 @@
       <text class="">Upload pictures</text>
     </view>
 
-  <view class="flex-item" style="text-align:right;">
-    <image 
-          class="userinfo-avatar" 
-          src="../../images/头像@2x.png" 
-          background-size="cover">
-    </image>
-  </view>
-    
+    <view class="flex-item" style="text-align:right;">
+      <image class="userinfo-avatar" src="{{userInfo.photo}}" background-size="cover">
+      </image>
+    </view>
+
   </view>
 
   <view class="my">
-    <view class="my-item flex-wrp" style="border-bottom:0">
-      <view class="myitem-icon flex-item">
-        <image src="../../images/发布1@2x.png"></image>
+
+    <view class="my-item flex-wrp">
+      <view bindtap="indexAction" class="myitem-name flex-item text2Style">
+        <text>Nickname</text>
       </view>
-      <view bindtap="indexAction" class="myitem-name flex-item">
-        <text>Post Question</text>
-      </view>
-      <view class="myitem-icon-right flex-item">
-        <image src="../../images/返回键1@2x.png"></image>
+      <view class="myitem-icon-right flex-item" style="color: #DD6867;">
+        <text>{{userInfo.username}}</text>
       </view>
     </view>
 
 
     <view class="my-item flex-wrp">
-      <view class="myitem-icon flex-item">
-        <image src="../../images/评论@2x.png"></image>
-      </view>
-      <view bindtap="indexAction" class="myitem-name flex-item">
-        <text>Answer Question</text>
+      <view bindtap="indexAction" class="myitem-name flex-item text2Style">
+        <text>Gender</text>
       </view>
       <view class="myitem-icon-right flex-item">
-        <image src="../../images/返回键1@2x.png"></image>
+        <radio-group class="radio-group" bindchange="radioChange">
+          <label class="radio" wx:for="{{items}}">
+            <radio  color="#DD6867" value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+          </label>
+        </radio-group>
       </view>
     </view>
 
 
     <view class="my-item flex-wrp">
-      <view class="myitem-icon flex-item">
-        <image src="../../images/收藏1@2x.png"></image>
-      </view>
-      <view bindtap="indexAction" class="myitem-name flex-item">
-        <text>Collection</text>
+      <view bindtap="talkAction" class="myitem-name flex-item text2Style">
+              <text>Number</text>
       </view>
       <view class="myitem-icon-right flex-item">
-        <image src="../../images/返回键1@2x.png"></image>
+              <text>-</text>
       </view>
     </view>
-
 
     <view class="my-item flex-wrp">
-      <view class="myitem-icon flex-item">
-        <image src="../../images/联系客服@2x.png"></image>
-      </view>
-      <view bindtap="talkAction" class="myitem-name flex-item">
-        <text>About SAVE29</text>
+      <view bindtap="talkAction" class="myitem-name flex-item text2Style">
+              <text>Integral</text>
       </view>
       <view class="myitem-icon-right flex-item">
-        <image src="../../images/返回键1@2x.png"></image>
-      </view>
-    </view>
-
-
-    <view class="my-item flex-wrp " style="border-bottom:0">
-      <view class="myitem-icon flex-item">
-        <image src="../../images/投诉意见@2x.png"></image>
-      </view>
-      <view bindtap="talkAction" class="myitem-name flex-item">
-        <text>Feedback problems</text>
-      </view>
-      <view class="myitem-icon-right flex-item">
-        <image src="../../images/返回键1@2x.png"></image>
-      </view>
-    </view>
-
-
-    <view class="my-item flex-wrp">
-      <view class="myitem-icon flex-item">
-        <image src="../../images/联系客服@2x.png"></image>
-      </view>
-      <view bindtap="talkAction" class="myitem-name flex-item">
-        <text>Customer service</text>
-      </view>
-      <view class="myitem-icon-right flex-item">
-        <image src="../../images/返回键1@2x.png"></image>
+              <text>-</text>
       </view>
     </view>
   </view>

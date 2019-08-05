@@ -120,10 +120,17 @@
   height: 45rpx;
   padding: 37.5rpx 0;
 }
-.my .my-item .myitem-icon-right image{
-  width: 20rpx;
-  height: 30rpx;
-  padding: 45rpx 0;
+.my .my-item .myitem-icon-right{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.my .my-item .myitem-icon-right text{
+  font-size: 40rpx;
+ 
+  
+
 }
 .my .my-item .myitem-name{
   flex: 5;
@@ -141,11 +148,20 @@
 .text1Style{
   text-align: left;
   font-size: 40rpx;
-   color: #333333;
+  color: #333333;
   display: flex;
   align-items: center;
   justify-content: left;
 }
 .text1Style text{
   margin-left: 20rpx;
+}
+.text2Style text{
+  margin-left: 30rpx;
+}
+.radio{
+  font-size: 30rpx;
+}
+.radio-group{
+  width: 100%;
 }

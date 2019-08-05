@@ -45,10 +45,9 @@ Page({
     })
   },
   editorAction:function(){
-    // wx.navigateTo({
-    //   url: '../person/person'
-    // })
-
+    wx.navigateTo({
+      url: '../person/person'
+    })
   },
   bindShare: function () {
     wx.showShareMenu({
@@ -75,10 +74,10 @@ Page({
     }
   },
   onShow:function(){
-    var islog = util.getloginStatus();
+    var userInfo = util.getUserInfo();
     this.setData({
-      islogin: islog ? true : false ,
-      userInfo:islog
+      islogin: userInfo ? true : false ,
+      userInfo: userInfo
     })
   },
   onLoad: function () {}

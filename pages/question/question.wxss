@@ -98,4 +98,15 @@ overflow: hidden;
     border:0;
     color: white;
   }
+
+
+.feed-item{
+  width: 690rpx;
+  padding: 20rpx 30rpx 20rpx;
+  margin: 0rpx 0 7rpx 0;
+  background: #ffffff;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 5px #eeeeee;
+}
 /*feed-item part is in app.wxss for multiplexing*/

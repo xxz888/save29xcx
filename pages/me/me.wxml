@@ -12,7 +12,7 @@
       </image>
     </view>
 
-    <view class="user-info flex-item" style="text-align: left;margin-left:-20rpx">
+    <view class="user-info flex-item">
       <text class="userinfo-nickname">{{userInfo.username}}</text>
       <text bindtap="editorAction" class="edit">>> Editor</text>
       <text class="jifenStyle">Integral</text>
@@ -25,9 +25,10 @@
           src="../../images/QR@2x.png">
       </image>
       <button 
-          class="userinfo-avatar-button" 
+          class="share-btn" 
           open-type="share" 
-          plain="true">
+          >
+          <cover-image class="s-icon" src="../../images/分享@2x.png" />
       </button>
 
       <text style="display:block;font-size:27rpx;margin-top:5rpx;align-text:right">Invite Friends</text>

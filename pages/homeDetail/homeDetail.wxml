@@ -1,57 +1,62 @@
 <!--question.wxml-->
+<scroll-view scroll-y="true" class="container" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+
 <view class="container">
   <view class="question-wrp">
+    <!-- 头部头像名字和内容 -->
     <view class="question-item">
-
-      <view class="imageTitleStyle" >
-            <image 
-            style="width:60rpx;height:60rpx;margin-top:10rpx;border-radius:60rpx"  
-            src="../../images/icon9.jpeg">
-            </image>
-            <view style="margin-left:20rpx">
-              <text>Hello树哥</text>
-            </view>
+      <view class="imageTitleStyle">
+        <image style="width:60rpx;height:60rpx;margin-top:10rpx;border-radius:60rpx" src="{{startdic.user_info.photo}}">
+        </image>
+        <view style="margin-left:20rpx">
+          <text>{{startdic.user_info.username}}</text>
+        </view>
       </view>
-       
-
-      <view class="que-title">
-        What are the attractions in China？
-      </view>
+      <!-- <view class="que-title">
+        {{startdic.details}}
+      </view> -->
       <view class="que-content">
-        I think hangzhou is the most beautiful city.The west lake in hangzhou is beautiful and the people are friendly.Alibaba group is also in hangzhou.
+        {{startdic.details}}
       </view>
 
-    
+
     </view>
-      <view style="width:100%;height:15rpx;background-color:#EEEEEE;margin:0">
-      </view>
+    <!-- 分割线 -->
+    <view style="width:100%;height:15rpx;background-color:#EEEEEE;margin:0">
+    </view>
   </view>
+
+  <!-- 回答列表 -->
   <view class="answer-feed">
-    <view class="feed-item" wx:for="{{imgArray}}" >
+    <view class="" wx:for="{{dataArray}}" wx:key wx:for-index='keys' wx:for-item='itemaa'>
+
       <view class="feed-source flex-wrp" style="flex-direction:row">
         <view class="flex-item" style="flex-grow: 1;display: flex;">
           <a class="">
             <view class="avatar">
-              <image src="../../images/icon9.jpeg"></image>
+              <image src="{{itemaa.user_info.photo}}"></image>
             </view>
-            <text>Hello树哥</text>
+            <text>{{itemaa.user_info.username}}</text>
           </a>
         </view>
         <view class="flex-item" bindtap="zanAction" style="flex-grow: 1;display: flex;justify-content: flex-end">
-            <view class="avatar_zan" >
-              <image src="../../images/selzan.png"></image>
-            </view>
-           <text class="count_zan">10</text>
+          <view class="avatar_zan">
+            <image 
+            data-answerid = "{{itemaa.id}}"
+            bindtap="praiseAction"
+            src="{{itemaa.is_praise ? '../../images/selzan.png' : '../../images/unzan.png'}}"></image>
+          </view>
+          <text class="count_zan">{{itemaa.praise_number}}</text>
         </view>
       </view>
       <view class="feed-content">
         <view class="answer-body">
           <view>
-            <text class="answer-txt">{{inputText}}</text>
+            <text class="answer-txt">{{itemaa.details}}</text>
           </view>
           <view class="flex-wrp" style="flex-direction:row;padding:20rpx 10rpx 10rpx 10rpx">
-            <view class="flex-item" wx:for="{{imgArray}}" wx:key="{{imgArray}}">
-              <image style="width:215rpx;height:140rpx;border-radius: 5rpx" src="../../images/24213.jpg"></image>
+            <view class="flex-item" wx:for="{{itemaa.pic_list}}" wx:key="key" wx:for-item='itempic'>
+              <image style="width:215rpx;height:140rpx;border-radius: 5rpx" src="{{'http://192.168.101.22:8001/' +  itempic.picture}}"></image>
             </view>
           </view>
         </view>
@@ -60,18 +65,24 @@
   </view>
 
 
-  <view class="answer-footer flex-wrp"  style="flex-direction:row;width:100%">
+  <view class="answer-footer flex-wrp" style="flex-direction:row;width:100%">
 
 
-  <view class="flex-item">
-   <button class="buttonStyle" bindtap="clickPost"  style="width:600rpx;font-size:28rpx;height:100%">
+    <view class="flex-item">
+      <button class="buttonStyle" bindtap="clickPost" style="width:600rpx;font-size:28rpx;height:100%">
         Write dowm your thoughts
-   </button>
- </view>
+      </button>
+    </view>
 
 
-      <view class="flex-item">
-          <image style="width:50rpx;height:45rpx;margin:10rpx" src="../../images/收藏3@2x.png"></image>
-     </view>
+    <view class="flex-item">
+      <image 
+      style="width:50rpx;height:45rpx;margin:10rpx" 
+      src="{{startdic.is_collect ? '../../images/收藏3@2x.png' : '../../images/收藏@2x.png'}}"     
+      data-selectStatus = "false"
+      bindtap="collectAction"
+      ></image>
+    </view>
   </view>
-</view>
+    </view>
+</scroll-view>
