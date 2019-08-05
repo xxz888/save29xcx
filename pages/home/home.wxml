@@ -8,7 +8,7 @@
       <input placeholder="Q&A" placeholder-class="search-placeholder" bindinput="bindinput"/>
     </view>
   </view>
-  <view style="width:100%;aeight:11rpx;background-color:#F7F7F7;margin:0">
+  <view style="width:100%;height:11rpx;background-color:#F7F7F7;margin:0">
   </view>
   <block wx:for="{{feed}}" wx:key="idx" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
     <view class="feed-item" 
