@@ -148,10 +148,17 @@ flex: 1;
 display: inline-block;
 padding: 0;
 background: none;
-position: static;
+/* position: static; */
 width:50rpx;
 height: 50rpx;
 margin-left: 40rpx;
 margin-right: 20rpx;
 
+}
+.share-btn::after {
+  border: none
+}
+.plain {
+  border: none;
+  border-color: transparent;
 }

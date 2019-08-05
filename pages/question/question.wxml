@@ -17,13 +17,13 @@ scroll-x="false"
   </view>
 <!-- 第一行 -->
   <view class="midView">
-    <view bindtap="bindItemTap" class="itemClass">
+    <view data-type='0' bindtap="bindItemTap" class="itemClass">
       <image class="imageStyle" src="../../images/发布@2x.png"></image>
       <text class="textStyle">Question</text>
     </view>
 
 
-  <view bindtap="bindItemTap" class="itemClass">
+  <view data-type='1' bindtap="bindItemTap" class="itemClass">
     <view style="display: flex">
        <image class="imageStyleOther" src="../../images/锁定@2x.png"></image>
        <text class="smallStyle">History</text>
@@ -35,7 +35,7 @@ scroll-x="false"
 
 <!-- 第二行 -->
   <view class="midView">
-     <view bindtap="bindItemTap" class="itemClass">
+     <view data-type='2' bindtap="bindItemTap" class="itemClass">
     <view style="display: flex">
        <image class="imageStyleOther" src="../../images/锁定@2x.png"></image>
        <text class="smallStyle">Tourism</text>
@@ -44,7 +44,7 @@ scroll-x="false"
     </view>
 
 
-  <view bindtap="bindItemTap" class="itemClass">
+  <view data-type='3' bindtap="bindItemTap" class="itemClass">
     <view style="display: flex">
        <image class="imageStyleOther" src="../../images/锁定@2x.png"></image>
        <text class="smallStyle">Scenery</text>
@@ -56,7 +56,7 @@ scroll-x="false"
 
 <!-- 第三行 -->
   <view class="midView">
-    <view bindtap="bindItemTap" class="itemClass">
+    <view  data-type='4' bindtap="bindItemTap" class="itemClass">
     <view style="display: flex">
        <image class="imageStyleOther" src="../../images/锁定@2x.png"></image>
        <text class="smallStyle">The humanities</text>
@@ -65,7 +65,7 @@ scroll-x="false"
     </view>
 
 
-  <view bindtap="bindItemTap" class="itemClass">
+  <view data-type='5' bindtap="bindItemTap" class="itemClass">
     <view style="display: flex">
        <image class="imageStyleOther" src="../../images/锁定@2x.png"></image>
        <text class="smallStyle">The popular sciences</text>

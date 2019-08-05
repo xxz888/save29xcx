@@ -28,7 +28,7 @@
           class="share-btn" 
           open-type="share" 
           >
-          <cover-image class="s-icon" src="../../images/分享@2x.png" />
+      <cover-image class="s-icon" src="../../images/分享@2x.png" />
       </button>
 
       <text style="display:block;font-size:27rpx;margin-top:5rpx;align-text:right">Invite Friends</text>
@@ -37,11 +37,11 @@
   </view>
 
   <view class="my">
-    <view class="my-item flex-wrp" style="border-bottom:0">
+    <view bindtap="indexPostQuestionAction" class="my-item flex-wrp" style="border-bottom:0">
       <view class="myitem-icon flex-item">
         <image src="../../images/发布1@2x.png"></image>
       </view>
-      <view bindtap="indexAction" class="myitem-name flex-item">
+      <view  class="myitem-name flex-item">
         <text>Post Question</text>
       </view>
       <view class="myitem-icon-right flex-item">
@@ -54,7 +54,7 @@
       <view class="myitem-icon flex-item">
         <image src="../../images/评论@2x.png"></image>
       </view>
-      <view bindtap="indexAction" class="myitem-name flex-item">
+      <view bindtap="indexAnswerQuestionAction" class="myitem-name flex-item">
         <text>Answer Question</text>
       </view>
       <view class="myitem-icon-right flex-item">
@@ -67,7 +67,7 @@
       <view class="myitem-icon flex-item">
         <image src="../../images/收藏1@2x.png"></image>
       </view>
-      <view bindtap="indexAction" class="myitem-name flex-item">
+      <view bindtap="indexCollectionAction" class="myitem-name flex-item">
         <text>Collection</text>
       </view>
       <view class="myitem-icon-right flex-item">

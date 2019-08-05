@@ -2,13 +2,6 @@
 var util = require('../../utils/util.js')
 Page({
   data: {
-    navTab: ["推荐", "圆桌", "热门", "收藏", "热门", "收藏"],
-    currentNavtab: "0",
-    imgUrls: [
-      '../../images/24213.jpg',
-      '../../images/24280.jpg',
-      '../../images/1444983318907-_DSC1826.jpg'
-    ],
     indicatorDots: false,
     autoplay: true,
     interval: 5000,
@@ -28,9 +21,10 @@ Page({
     })
   },
   //事件处理函数
-  bindItemTap: function () {
-    wx.switchTab({
-      url: '../home/home'
+  bindItemTap: function (e) {
+    var type = e.currentTarget.dataset.type;
+    wx.navigateTo({
+      url: '../samehome/samehome?question_type='+type
     })
   },
   switchTab: function(e){

@@ -1,7 +1,7 @@
 <!--question.wxml-->
-<scroll-view scroll-y="true" class="container" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+<scroll-view scroll-y="true" class="container" bindscrolltoupper="upper"  bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
 
-<view class="container">
+<view >
   <view class="question-wrp">
     <!-- 头部头像名字和内容 -->
     <view class="question-item">
@@ -28,7 +28,7 @@
 
   <!-- 回答列表 -->
   <view class="answer-feed">
-    <view class="" wx:for="{{dataArray}}" wx:key wx:for-index='keys' wx:for-item='itemaa'>
+    <view class="feed-item" wx:for="{{dataArray}}" wx:key wx:for-index='keys' wx:for-item='itemaa'>
 
       <view class="feed-source flex-wrp" style="flex-direction:row">
         <view class="flex-item" style="flex-grow: 1;display: flex;">
@@ -39,7 +39,7 @@
             <text>{{itemaa.user_info.username}}</text>
           </a>
         </view>
-        <view class="flex-item" bindtap="zanAction" style="flex-grow: 1;display: flex;justify-content: flex-end">
+        <view class="flex-item" style="flex-grow: 1;display: flex;justify-content: flex-end">
           <view class="avatar_zan">
             <image 
             data-answerid = "{{itemaa.id}}"

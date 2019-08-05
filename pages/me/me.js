@@ -7,13 +7,6 @@ Page({
     userInfo: {},
     islogin:false
   },
-
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: ''
-    })
-  },
   loginAction:function(){
     util.wxlogin();
   },
@@ -34,9 +27,19 @@ Page({
       url: '../chat/chat'
     })
   },
-  indexAction: function () {
-    wx.switchTab({
-      url: '../index/index'
+  indexPostQuestionAction: function () {
+    wx.navigateTo({
+      url: '../samehome/samehome?type=1'
+    })
+  },
+  indexAnswerQuestionAction:function(){
+    wx.navigateTo({
+      url: '../samehome/samehome?type=2'
+    })
+  },
+  indexCollectionAction: function () {
+    wx.navigateTo({
+      url: '../samehome/samehome?type=3'
     })
   },
   talkAction: function () {
@@ -49,30 +52,30 @@ Page({
       url: '../person/person'
     })
   },
-  bindShare: function () {
-    wx.showShareMenu({
-      withShareTicket: true
-    })
-  },
-  onShareAppMessage: function (ops) {
-    if (ops.from === 'button') {
-      // 来自页面内转发按钮
-      console.log(ops.target)
-    }
-    return {
-      title: '来自SVAE的分享',
-      imageUrl: '',//图片地址
-      path: '',// 用户点击首先进入的当前页面
-      success: function (res) {
-        // 转发成功
-        console.log("转发成功:");
-      },
-      fail: function (res) {
-        // 转发失败
-        console.log("转发失败:");
-      }
-    }
-  },
+  // bindShare: function () {
+  //   wx.showShareMenu({
+  //     withShareTicket: true
+  //   })
+  // },
+  // onShareAppMessage: function (ops) {
+  //   if (ops.from === 'button') {
+  //     // 来自页面内转发按钮
+  //     console.log(ops.target)
+  //   }
+  //   return {
+  //     title: '来自SVAE的分享',
+  //     imageUrl: '',//图片地址
+  //     path: '',// 用户点击首先进入的当前页面
+  //     success: function (res) {
+  //       // 转发成功
+  //       console.log("转发成功:");
+  //     },
+  //     fail: function (res) {
+  //       // 转发失败
+  //       console.log("转发失败:");
+  //     }
+  //   }
+  // },
   onShow:function(){
     var userInfo = util.getUserInfo();
     this.setData({

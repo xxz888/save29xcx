@@ -9,7 +9,8 @@
     "pages/ask/question-ask",
     "pages/Talk/Talk",
     "pages/person/person",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/samehome/samehome"
   ],
   "window": {
     "backgroundTextStyle": "dark",

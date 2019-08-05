@@ -79,7 +79,7 @@ Page({
       var length = self.data.tempFilePaths.length; //总数
       var count = 0; //第几张
 
-      if(self.data.tempFilePaths > 0){
+      if(self.data.tempFilePaths.length > 0){
         var xxzid = self.data.type == "q" ? res.data.question_id : res.data.answer_id;
         self.uploadOneByOne(self.data.tempFilePaths, successUp, failUp, count, length, xxzid);
       }else{

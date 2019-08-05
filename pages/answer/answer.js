@@ -18,15 +18,11 @@ Page({
     //调用应用实例的方法获取全局数据
     this.refresh();
   },
-  clickPost: function () {
-    wx.switchTab({
-      url: '../home/home'
-    })
-  },
   //事件处理函数
-  bindItemTap: function () {
-    wx.switchTab({
-      url: '../home/home'
+  bindItemTap: function (e) {
+    var type = e.currentTarget.dataset.type;
+    wx.navigateTo({
+      url: '../samehome/samehome?question_type=' + type
     })
   },
   switchTab: function (e) {

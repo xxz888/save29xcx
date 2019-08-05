@@ -44,7 +44,7 @@
 
 }
 .answer-txt{
-color: #000;
+
 width: 450rpx;  
 display: -webkit-box;  
 word-break: break-all;

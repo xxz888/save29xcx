@@ -10,17 +10,15 @@ Page({
     inputText:"",
     //上个界面传过来的id值
     startdic:{},
-    page:1
-  },
-
-  //事件处理函数
-  bindItemTap: function() {
-    wx.navigateTo({
-      url: '../answer/answer'
-    })
+    page:1,
+    islogin:false
   },
   //跳转回答界面
   clickPost:function(){
+    if (!this.data.islogin) {
+      util.wxlogin();
+      return;
+    }
     wx.navigateTo({
       url: '../Post/post?question_id=' + this.data.startdic.id + '&type=2'
     })
@@ -34,9 +32,9 @@ Page({
 
   },
   onLoad: function (options) {
-    let scrollHeight = wx.getSystemInfoSync().windowHeight;
+    var userInfo = util.getUserInfo();
     this.setData({
-      scrollHeight: scrollHeight
+      islogin: userInfo ? true : false,
     })
 
 
@@ -63,7 +61,9 @@ Page({
     this.getVCData(this.data.page);
   },
   upper: function () {
-    this.data.page = 1;
+    this.setData({
+      page: 1
+    })
     wx.showNavigationBarLoading()
     this.getVCData(this.data.page);
     setTimeout(
@@ -73,7 +73,9 @@ Page({
       }, 1000);
   },
   lower: function (e) {
-    this.data.page += 1;
+    this.setData({
+      page: this.data.page +1
+    })
     wx.showNavigationBarLoading();
     var self = this;
     setTimeout(function () {
@@ -111,6 +113,10 @@ Page({
   },
   //收藏这一个问题
   collectAction:function(){
+    if (!this.data.islogin) {
+      util.wxlogin();
+      return;
+    }
     var self = this;
     var par = 'users/question_collect?question_id=' + this.data.startdic.id;
     util.SEND(par, "GET", null, res => {
@@ -136,6 +142,12 @@ Page({
   },
   //点赞这个回答
   praiseAction: function (event){
+    if (!this.data.islogin){
+        util.wxlogin();
+        return;
+    }
+
+
     var self = this;
     var answerid = event.currentTarget.dataset.answerid;
     var par = 'users/answer_praise?answer_id=' + answerid;
