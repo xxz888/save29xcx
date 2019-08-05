@@ -45,6 +45,8 @@ Page({
     })
   },
   onLoad: function () {
+  },
+  onShow:function(){
     this.getVCData(this.data.page);
   },
   getVCData:function(page){
