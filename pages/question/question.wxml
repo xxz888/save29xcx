@@ -28,7 +28,7 @@ scroll-x="false"
        <image class="imageStyleOther" src="../../images/锁定@2x.png"></image>
        <text class="smallStyle">History</text>
     </view>
-    <text class="textStyleOther">208 Questions</text>
+    <text class="textStyleOther">{{numForm.sum_history}} Questions</text>
     </view>
   </view>
 
@@ -40,7 +40,7 @@ scroll-x="false"
        <image class="imageStyleOther" src="../../images/锁定@2x.png"></image>
        <text class="smallStyle">Tourism</text>
     </view>
-    <text class="textStyleOther">8 Questions</text>
+    <text class="textStyleOther">{{numForm.sum_tourism}} Questions</text>
     </view>
 
 
@@ -49,7 +49,7 @@ scroll-x="false"
        <image class="imageStyleOther" src="../../images/锁定@2x.png"></image>
        <text class="smallStyle">Scenery</text>
     </view>
-    <text class="textStyleOther">109 Questions</text>
+    <text class="textStyleOther">{{numForm.sum_scenery}} Questions</text>
     </view>
   </view>
 
@@ -61,7 +61,7 @@ scroll-x="false"
        <image class="imageStyleOther" src="../../images/锁定@2x.png"></image>
        <text class="smallStyle">The humanities</text>
     </view>
-    <text class="textStyleOther">99 Questions</text>
+    <text class="textStyleOther">{{numForm.sum_humanities}} Questions</text>
     </view>
 
 
@@ -70,7 +70,7 @@ scroll-x="false"
        <image class="imageStyleOther" src="../../images/锁定@2x.png"></image>
        <text class="smallStyle">The popular sciences</text>
     </view>
-    <text class="textStyleOther">29 Questions</text>
+    <text class="textStyleOther">{{numForm.sum_popular}} Questions</text>
     </view>
   </view>
 

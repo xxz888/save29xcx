@@ -7,13 +7,21 @@ Page({
     interval: 5000,
     duration: 1000,
     feed: [],
-    feed_length: 0
+    feed_length: 0,
+    numForm:{
+      sum_history:0,
+      sum_tourism:0, 
+      sum_scenery:0,
+      sum_humanities:0,
+      sum_popular:0
+    }
   },
   onLoad: function () {
     console.log('onLoad')
     var that = this
     //调用应用实例的方法获取全局数据
     this.refresh();
+    this.getVCData();
   },
   clickPost: function () {
     wx.navigateTo({
@@ -85,5 +93,15 @@ Page({
       feed: this.data.feed.concat(next_data),
       feed_length: this.data.feed_length + next_data.length
     });
-  }
+  },
+
+
+  getVCData: function (page) {
+    var par = 'users/sum/';
+    util.SEND(par, "GET", null, res => {
+      this.setData({
+        numForm : res.data
+      })
+    })
+  },
 });

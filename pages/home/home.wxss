@@ -1,7 +1,7 @@
 /**index.wxss**/
 
 .container{
-  height: 1500rpx;
+  height: 100%;
   background: #fff;
 }
 .container .search{
@@ -44,7 +44,7 @@
 
 }
 .answer-txt{
-color: #000;
+color: #333;
 width: 450rpx;  
 display: -webkit-box;  
 word-break: break-all;
@@ -54,4 +54,6 @@ overflow: hidden;
 -webkit-line-clamp: 4;    
 
 }
+
+
 /*feed-item part is in app.wxss for multiplexing*/

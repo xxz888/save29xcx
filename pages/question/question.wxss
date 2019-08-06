@@ -72,10 +72,7 @@
 .smallStyle{
    margin-top:18rpx;
    margin-left:12rpx;
-   font-size: 32rpx;
-
-
-   display: -webkit-box;    
+   font-size: 34rpx;  
 word-break: break-all;
 text-overflow: ellipsis; 
 overflow: hidden;           
