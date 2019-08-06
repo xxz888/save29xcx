@@ -7,6 +7,7 @@ App({
 
   },
   globalData:{
-    userInfo:null
+    userInfo:null,
+    host:"http://192.168.101.22:8001/static/images/"
   }
 })

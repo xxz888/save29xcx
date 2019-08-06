@@ -1,11 +1,14 @@
 var util = require('../../utils/util.js')
+var app = getApp()
+
 Page({
   data: {
     //判断小程序的API，回调，参数，组件等是否在当前版本可用。
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     //wx.login返回的code，需要传给后台
     code:"",
-    open_id:""
+    open_id:"",
+    SAVE29Img: app.globalData.host + "SAVE29.png"
   },
   onLoad: function () {
   },

@@ -6,7 +6,9 @@ Page({
     feed: [],
     feed_length: 0,
     page:1,
-    bindinputValue:""
+    bindinputValue:"",
+    searchImg: app.globalData.host + "搜索.png",
+
   },
 
   //搜索按钮

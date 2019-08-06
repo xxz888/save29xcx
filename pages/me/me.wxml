@@ -5,10 +5,7 @@
 
   <view wx:if="{{islogin==true}}" class="user flex-wrp">
     <view class="avatar flex-item">
-          <image 
-          class="userinfo-avatar" 
-          src="{{userInfo.photo}}" 
-          background-size="cover">
+      <image class="userinfo-avatar" src="{{userInfo.photo}}" background-size="cover">
       </image>
     </view>
 
@@ -17,22 +14,12 @@
       <text bindtap="editorAction" class="edit">>> Editor</text>
       <text class="jifenStyle">Integral</text>
     </view>
-    
+
     <view class="user-info flex-item" style="text-align: right">
-      <image 
-          bindtap="bindErWeiMa" 
-          class="userinfo-avatar-other"  
-          src="../../images/QR@2x.png">
+      <image bindtap="bindErWeiMa" class="userinfo-avatar-other" src="{{erweimasaveImg}}">
       </image>
-        <image 
-          style="width:300rpx;height:300rpx"
-          src="{{requestImg}}">
-      </image>
-      <button 
-          class="share-btn" 
-          open-type="share" 
-          >
-      <cover-image class="s-icon" src="../../images/分享@2x.png" />
+      <button class="share-btn" open-type="share">
+        <image  class="s-icon" src="{{fenxiangImg}}"></image>
       </button>
 
       <text style="display:block;font-size:27rpx;margin-top:5rpx;align-text:right">Invite Friends</text>
@@ -43,79 +30,116 @@
   <view class="my">
     <view bindtap="indexPostQuestionAction" class="my-item flex-wrp" style="border-bottom:0">
       <view class="myitem-icon flex-item">
-        <image src="../../images/发布1@2x.png"></image>
+        <image src="{{Img1}}"></image>
       </view>
-      <view  class="myitem-name flex-item">
+      <view class="myitem-name flex-item">
         <text>Post Question</text>
       </view>
       <view class="myitem-icon-right flex-item">
-        <image src="../../images/返回键1@2x.png"></image>
+        <image src="{{Img7}}"></image>
       </view>
     </view>
 
 
     <view class="my-item flex-wrp">
       <view class="myitem-icon flex-item">
-        <image src="../../images/评论@2x.png"></image>
+        <image src="{{Img2}}"></image>
       </view>
       <view bindtap="indexAnswerQuestionAction" class="myitem-name flex-item">
         <text>Answer Question</text>
       </view>
       <view class="myitem-icon-right flex-item">
-        <image src="../../images/返回键1@2x.png"></image>
+        <image src="{{Img7}}"></image>
       </view>
     </view>
 
 
     <view class="my-item flex-wrp">
       <view class="myitem-icon flex-item">
-        <image src="../../images/收藏1@2x.png"></image>
+        <image src="{{Img3}}"></image>
       </view>
       <view bindtap="indexCollectionAction" class="myitem-name flex-item">
         <text>Collection</text>
       </view>
       <view class="myitem-icon-right flex-item">
-        <image src="../../images/返回键1@2x.png"></image>
+        <image src="{{Img7}}"></image>
       </view>
     </view>
 
 
     <view class="my-item flex-wrp">
       <view class="myitem-icon flex-item">
-        <image src="../../images/联系客服@2x.png"></image>
+        <image src="{{Img4}}"></image>
       </view>
       <view bindtap="talkAction" class="myitem-name flex-item">
         <text>About SAVE29</text>
       </view>
       <view class="myitem-icon-right flex-item">
-        <image src="../../images/返回键1@2x.png"></image>
+        <image src="{{Img7}}"></image>
       </view>
     </view>
 
 
     <view class="my-item flex-wrp " style="border-bottom:0">
       <view class="myitem-icon flex-item">
-        <image src="../../images/投诉意见@2x.png"></image>
+        <image src="{{Img5}}"></image>
       </view>
       <view bindtap="talkAction" class="myitem-name flex-item">
         <text>Feedback problems</text>
       </view>
       <view class="myitem-icon-right flex-item">
-        <image src="../../images/返回键1@2x.png"></image>
+        <image src="{{Img7}}"></image>
       </view>
     </view>
 
 
     <view class="my-item flex-wrp">
       <view class="myitem-icon flex-item">
-        <image src="../../images/联系客服@2x.png"></image>
+        <image src="{{Img6}}"></image>
       </view>
       <view bindtap="talkAction" class="myitem-name flex-item">
         <text>Customer service</text>
       </view>
       <view class="myitem-icon-right flex-item">
-        <image src="../../images/返回键1@2x.png"></image>
+        <image src="{{Img7}}"></image>
       </view>
     </view>
   </view>
+
+
+
+  <!-- 弹框 -->
+  <view class="modal-box" hidden="{{flag}}" bindtap="hide">
+    <view class="modal-content">
+      <view class="bgImage" style="background:url({{bgImg}});background-size:100% 100%">
+        <view class="tkheader">
+          <view style="background:url({{SAVE29Img}});background-size:100% 100%;width:80rpx;height:80rpx"></view>
+          <text class="">SAVE29 Q&A</text>
+        </view>
+        <view class="tkbody">
+          <image src="{{erweimaImg}}"></image>
+        </view>
+        <view class="tkfoot">
+          <text class="tkfoot-text1">Scan QR code and join Us</text>
+        </view>
+        <view class="tkfoot">
+          <text class="tkfoot-text2">(Auto-save picture)</text>
+        </view>
+      </view>
+    </view>
+    <view bindtap="hide" class="modal-del">
+        <image style="width:80rpx;height:80rpx;margin-top:50rpx" src="{{erweimacancle}}"></image>
+    </view>
+
+  </view>
+
+
+
+
+
+
+
+
+
+
 </view>

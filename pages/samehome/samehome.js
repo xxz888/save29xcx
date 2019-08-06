@@ -3,6 +3,7 @@ var util = require('../../utils/util.js')
 var app = getApp()
 Page({
   data: {
+    searchImg: app.globalData.host + "搜索.png",
     feed: [],
     feed_length: 0,
     page: 1,

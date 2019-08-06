@@ -4,7 +4,7 @@
 
   <view class="search">
     <view class="search-left">
-      <image src="../../images/搜索.png"></image>
+      <image src="{{searchImg}}"></image>
       <input placeholder="Q&A" placeholder-class="search-placeholder" bindinput="bindinput"/>
     </view>
   </view>

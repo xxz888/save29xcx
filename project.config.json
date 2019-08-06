@@ -58,10 +58,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/home/home",
-					"pathName": "pages/home/home",
-					"query": "vc=home",
+					"id": 1,
+					"name": "pages/me/me",
+					"pathName": "pages/me/me",
+					"query": "vc= me",
 					"scene": null
 				}
 			]

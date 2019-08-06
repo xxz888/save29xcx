@@ -1,5 +1,7 @@
 //discovery.js
 var util = require('../../utils/util.js')
+var app = getApp()
+
 Page({
   data: {
     navTab: ["推荐", "圆桌", "热门", "收藏", "热门", "收藏"],
@@ -17,7 +19,10 @@ Page({
       sum_scenery: 0,
       sum_humanities: 0,
       sum_popular: 0
-    }
+    },
+    searchImg: app.globalData.host + "搜索.png",
+    feijiImg: app.globalData.host + "评论1@2x.png",
+    miaozhunImg: app.globalData.host + "锁定@2x.png"
   },
   onLoad: function () {
     console.log('onLoad')

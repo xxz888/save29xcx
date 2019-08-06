@@ -1,15 +1,16 @@
 // pages/Post/post.js
 var util = require('../../utils/util.js')
+var app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    placeholderImg: "../../images/tabbar/添加图片.png",
-    photo1: "../../images/添加图片.png",
-    photo2: "../../images/添加图片.png",
-    photo3: "../../images/添加图片.png",
+    photo1: app.globalData.host + "添加图片.png",
+    photo2: app.globalData.host + "添加图片.png",
+    photo3: app.globalData.host + "添加图片.png",
     details:"",
     tempFilePaths:[],
     textareaValue:"",

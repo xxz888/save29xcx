@@ -11,7 +11,11 @@ Page({
     //上个界面传过来的id值
     startdic:{},
     page:1,
-    islogin:false
+    islogin:false,
+    selzan: app.globalData.host + "selzan.png",
+    unzan: app.globalData.host + "unzan.png",
+    sel_collect: app.globalData.host + "收藏3@2x.png",
+    un_collect: app.globalData.host + "收藏@2x.png",
   },
   //跳转回答界面
   clickPost:function(){
@@ -104,6 +108,10 @@ Page({
         });
       }
 
+
+      if(this.data.dataArray){
+
+      }
     }, res => {
       console.log(res);
     })

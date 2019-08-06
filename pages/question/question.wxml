@@ -11,21 +11,21 @@ scroll-x="false"
   scroll-top="{{scrollTop}}">
   <view class="search">
       <view class="search-left">
-          <image src="../../images/搜索.png"></image>
+          <image src="{{searchImg}}"></image>
           <input  placeholder="Q&A" placeholder-class="search-placeholder"/>
       </view>
   </view>
 <!-- 第一行 -->
   <view class="midView">
     <view data-type='0' bindtap="bindItemTap" class="itemClass">
-      <image class="imageStyle" src="../../images/发布@2x.png"></image>
+      <image class="imageStyle" src="{{feijiImg}}"></image>
       <text class="textStyle">Question</text>
     </view>
 
 
   <view data-type='1' bindtap="bindItemTap" class="itemClass">
     <view style="display: flex">
-       <image class="imageStyleOther" src="../../images/锁定@2x.png"></image>
+       <image class="imageStyleOther" src="{{miaozhunImg}}"></image>
        <text class="smallStyle">History</text>
     </view>
     <text class="textStyleOther">{{numForm.sum_history}} Questions</text>
@@ -37,7 +37,7 @@ scroll-x="false"
   <view class="midView">
      <view data-type='2' bindtap="bindItemTap" class="itemClass">
     <view style="display: flex">
-       <image class="imageStyleOther" src="../../images/锁定@2x.png"></image>
+       <image class="imageStyleOther" src="{{miaozhunImg}}"></image>
        <text class="smallStyle">Tourism</text>
     </view>
     <text class="textStyleOther">{{numForm.sum_tourism}} Questions</text>
@@ -46,7 +46,7 @@ scroll-x="false"
 
   <view data-type='3' bindtap="bindItemTap" class="itemClass">
     <view style="display: flex">
-       <image class="imageStyleOther" src="../../images/锁定@2x.png"></image>
+       <image class="imageStyleOther" src="{{miaozhunImg}}"></image>
        <text class="smallStyle">Scenery</text>
     </view>
     <text class="textStyleOther">{{numForm.sum_scenery}} Questions</text>
@@ -58,7 +58,7 @@ scroll-x="false"
   <view class="midView">
     <view  data-type='4' bindtap="bindItemTap" class="itemClass">
     <view style="display: flex">
-       <image class="imageStyleOther" src="../../images/锁定@2x.png"></image>
+       <image class="imageStyleOther" src="{{miaozhunImg}}"></image>
        <text class="smallStyle">The humanities</text>
     </view>
     <text class="textStyleOther">{{numForm.sum_humanities}} Questions</text>
@@ -67,7 +67,7 @@ scroll-x="false"
 
   <view data-type='5' bindtap="bindItemTap" class="itemClass">
     <view style="display: flex">
-       <image class="imageStyleOther" src="../../images/锁定@2x.png"></image>
+       <image class="imageStyleOther" src="{{miaozhunImg}}"></image>
        <text class="smallStyle">The popular sciences</text>
     </view>
     <text class="textStyleOther">{{numForm.sum_popular}} Questions</text>

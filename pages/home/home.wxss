@@ -45,7 +45,7 @@
 }
 .answer-txt{
 color: #333;
-width: 450rpx;  
+width: 100%;  
 display: -webkit-box;  
 word-break: break-all;
 text-overflow: ellipsis;  
