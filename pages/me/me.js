@@ -5,17 +5,47 @@ Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
-    islogin:false
+    islogin:false,
+    requestImg:""
   },
   loginAction:function(){
     util.wxlogin();
   },
   bindErWeiMa:function(){
-    wx.showToast({
-      title: '开发中',
-      icon: 'none',
-      duration: 1000
+    var self = this;
+    var commonUrl = 'https://api.weixin.qq.com/cgi-bin/';
+    var url = commonUrl + 'token?grant_type=client_credential&appid=' + 'wxbaa2095ba254a772' + '&secret=' + '0c335623e5eefb9782199dc918f4350f';
+    wx.request({
+      url: url ,
+      success(res) {
+        var access_token = res.data.access_token;
+        wx.request({
+          url:  'https://api.weixin.qq.com/wxa/getwxacode?access_token=' + access_token,
+          method: "POST",
+          data:{
+            "path": "pages/home/home",
+            "width": 430
+          },
+          responseType:"arraybuffer",
+          success(res){
+            let buffer = res.data;
+            self.transformArrayBufferToBase64(buffer);
+          }
+        })
+      }
     })
+  },
+  transformArrayBufferToBase64: function (buffer){
+    var binary = '';
+    var bytes = new Uint8Array(buffer);
+    for (var len = bytes.byteLength, i = 0; i < len; i++) {
+      binary += String.fromCharCode(bytes[i]);
+    }
+    this.setData({
+      requestImg: 'data:image/png;base64,' + util.btoa(binary)
+    })
+    
+    console.log(util.btoa(binary))
   },
   clickPost: function () {
     wx.navigateTo({

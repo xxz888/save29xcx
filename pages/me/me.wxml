@@ -24,6 +24,10 @@
           class="userinfo-avatar-other"  
           src="../../images/QR@2x.png">
       </image>
+        <image 
+          style="width:300rpx;height:300rpx"
+          src="{{requestImg}}">
+      </image>
       <button 
           class="share-btn" 
           open-type="share" 

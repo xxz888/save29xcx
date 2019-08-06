@@ -44,7 +44,7 @@ Page({
       url: '../homeDetail/homeDetail?startdic=' + data
     })
   },
-  onLoad: function () {
+  onLoad: function (options) {
   },
   onShow:function(){
     this.getVCData(this.data.page);
