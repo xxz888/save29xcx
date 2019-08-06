@@ -24,7 +24,7 @@ Page({
         wx.getUserInfo({
           success: function (res) {
             //缓存登录个人信息
-            wx.setStorageSync("userInfo", res.data);
+            wx.setStorageSync("userInfo", res.userInfo);
             //从数据库获取用户信息,并且请求登录接口
             that.queryUsreInfo();
           },
@@ -65,7 +65,7 @@ Page({
   registerUserAction: function () {
     var that = this;
     var url = 'users/user/';
-    var par = this.getUserInfo();
+    var par = util.getUserInfo();
     par.open_id = that.open_id;
     util.SEND(url, "POST", par, res => {
       that.loginSuccessFinishAction(res);
