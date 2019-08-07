@@ -24,7 +24,7 @@
         <!-- 提问的回答,纯文字 -->
         <view wx:if='{{item.pic_list.length == 0}}' class="answer-body">
           <view>
-            <text class="answer-txt" aid="{{item.id}}">{{item.details}}</text>
+            <text class="answer-txt"style="width:100%" aid="{{item.id}}">{{item.details}}</text>
           </view>
         </view>
         <!-- 提问的回答,文字和图片 -->
@@ -38,7 +38,7 @@
             <text class="answer-txt"  aid="{{item.id}}">{{item.details}}</text>
           </view>
           <!-- 回答的图片 -->
-          <view class="flex-item">
+          <view class="flex-item itemLeft">
             <image 
             class="answer-image" 
             src="{{'http://192.168.101.22:8001/' + item.pic_list[0].picture}}"></image>

@@ -6,7 +6,6 @@
     <!-- 头部头像名字和内容 -->
     <view class="question-item">
       <view class="imageTitleStyle">
-        
         <image style="width:60rpx;height:60rpx;margin-top:10rpx;border-radius:60rpx" src="{{startdic.user_info.photo}}">
         </image>
         <view style="margin-left:20rpx">
@@ -22,8 +21,12 @@
       <view class="que-content">
         {{startdic.details}}
       </view>
+      <view class="feed-source flex-wrp" style="flex-direction:row">
 
-
+       <view class="flex-item imgLeftStyle" wx:for="{{startdic.pic_list}}" wx:key="key" wx:if="{{index<3}}" wx:for-item='itempic'>
+              <image style="width:215rpx;height:140rpx;border-radius: 5rpx" src="{{xxzHost +  itempic.picture}}"></image>
+            </view>
+             </view>
     </view>
     <!-- 分割线 -->
     <view style="width:100%;height:15rpx;background-color:#EEEEEE;margin:0">
@@ -61,7 +64,7 @@
           </view>
           <view class="flex-wrp" style="flex-direction:row;padding:20rpx 10rpx 10rpx 10rpx">
             <view class="flex-item imgLeftStyle" wx:for="{{itemaa.pic_list}}" wx:key="key" wx:if="{{index<3}}" wx:for-item='itempic'>
-              <image style="width:215rpx;height:140rpx;border-radius: 5rpx" src="{{'http://192.168.101.22:8001/' +  itempic.picture}}"></image>
+              <image style="width:215rpx;height:140rpx;border-radius: 5rpx" src="{{xxzHost +  itempic.picture}}"></image>
             </view>
           </view>
         </view>

@@ -35,7 +35,7 @@ Page({
   bindItemTap: function (e) {
     var type = e.currentTarget.dataset.type;
     wx.navigateTo({
-      url: '../samehome/samehome?question_type=' + type
+      url: '../samehome/samehome?question_type=' + type + '&qa=a'
     })
   },
   switchTab: function (e) {

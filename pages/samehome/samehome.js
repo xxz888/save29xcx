@@ -9,7 +9,8 @@ Page({
     page: 1,
     bindinputValue: "",
     type_:"", //type
-    whereCome:0// 0代表我的界面 1代表问题和回答 
+    whereCome:0,    // 0代表我的界面 1代表问题和回答 
+    qa:""
   },
 
   //搜索按钮
@@ -53,17 +54,18 @@ Page({
 
       this.setData({
         type_: options.type,
-        whereCome : 0
+        whereCome : 0,
+    
       })
     }
     
     //question界面进来的，type为
     //（0/所有问题列表,1/history,2/tourism,3/scenery,4/ humanities, 5/ popular）
-
     if (options.question_type) {
       this.setData({
-        type_ : options.question_type,
-         whereCome: 1
+         type_ : options.question_type,
+         whereCome: 1,
+         qa: options.qa
       })
     }
 
@@ -128,6 +130,31 @@ Page({
     },
       1000);
   },
+  //界面消失的时候
+  onUnload:function(){
+    var url = "";
+    //我的界面进来的,返回我的界面
+    if(this.data.whereCome == 0){
+      url = '../me/me';
+    }
+    //如果是tabbar 1 2进来的
+    if(this.data.whereCome == 1){
+      //提问进来的
+        if(this.data.qa == 'q'){
+          url = '../question/question';
+        }
+        if(this.data.qa == 'a'){
+          url = '../answer/answer';
+        }
+    }
+    if(url == ""){
 
+    }else{
+      wx.switchTab({
+        url: url,
+      })
+    }
+  
+  }
 
 })

@@ -80,6 +80,7 @@ Page({
       url: '../chat/chat'
     })
   },
+  //以下三个是分别从提问，回答，收藏进来
   indexPostQuestionAction: function () {
     wx.navigateTo({
       url: '../samehome/samehome?type=1'

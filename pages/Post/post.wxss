@@ -28,9 +28,20 @@
 
 
   .subMitBtn{
-    margin-top: 250rpx;
+    margin-top: 200rpx;
     width: 90%;
     background:#EAA4A5;
     border:0;
     color: white;
   }
+
+  .item image{
+    width:200rpx;height:200rpx;border-radius:3px;
+  }
+  .picker text{
+    color: #666;
+  }
+.selectPicker{
+  margin-top: 50rpx;
+  margin-left: 30rpx;
+}

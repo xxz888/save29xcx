@@ -4,7 +4,7 @@
 
   <textarea 
             class="textareaPostStyle"
-            placeholder='  Write dowm your thoughts...'
+            placeholder="{{type == 'q' ? 'Post my questions' : 'Write dowm your thoughts...'}}"
             auto-height='true'
             placeholder-class='placeholderStyle'
             maxlength = '-1'
@@ -16,15 +16,31 @@
 
 <view class="main">
     <view class="item item1" data-index='1' bindtap="gotoShow">
-       <image style="width:200rpx;height:200rpx" src="{{photo1}}"></image>
+       <image  src="{{photo1}}"></image>
     </view>
     <view class="item item2" data-index='2' bindtap="gotoShow">
-           <image style="width:200rpx;height:200rpx" src="{{photo2}}"></image>
+           <image src="{{photo2}}"></image>
     </view>
     <view class="item item3" data-index='3' bindtap="gotoShow">
-           <image style="width:200rpx;height:200rpx" src="{{photo3}}"></image>
+           <image  src="{{photo3}}"></image>
     </view>
 </view>
+
+
+
+  <picker 
+  wx:if="{{type == a}}"
+  bindchange="bindPickerChange" 
+  value="{{index}}"
+  range="{{array}}"
+  class="selectPicker"
+  >
+    <view class="picker">
+    <text>点击选择类型：{{array[index]}}</text>
+    </view>
+  </picker>
+
+
 
   <view>
     <button  bindtap="submitAction" class="subMitBtn">

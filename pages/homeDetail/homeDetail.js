@@ -16,7 +16,9 @@ Page({
     unzan: app.globalData.host + "unzan.png",
     sel_collect: app.globalData.host + "收藏3@2x.png",
     un_collect: app.globalData.host + "收藏@2x.png",
+    xxzHost: app.globalData.hosturl
   },
+  
   //跳转回答界面
   clickPost:function(){
     if (!this.data.islogin) {
@@ -24,7 +26,7 @@ Page({
       return;
     }
     wx.navigateTo({
-      url: '../Post/post?question_id=' + this.data.startdic.id + '&type=2'
+      url: '../Post/post?question_id=' + this.data.startdic.id + '&type=a'
     })
   },
   zanAction:function(){
@@ -41,7 +43,13 @@ Page({
       islogin: userInfo ? true : false,
     })
 
-
+    wx.getSystemInfo({
+      success: function (res) {
+        console.log(res.windowWidth);
+        console.log(res.windowHeight);
+      },
+    })
+    
     var self = this;
     //上个界面传过来的字典
     this.setData({

@@ -8,6 +8,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+    //类型
+    array: ['History', 'Tourism', 'Scenery', 'The humanities','The popular science'],
+    //默认选择
+    index: 0,
+
     photo1: app.globalData.host + "添加图片.png",
     photo2: app.globalData.host + "添加图片.png",
     photo3: app.globalData.host + "添加图片.png",
@@ -15,7 +20,14 @@ Page({
     tempFilePaths:[],
     textareaValue:"",
     type:"",//q提问 a回答
-    question_id:"" //如果是回答的话，要把问题的id传过来
+    question_id:"", //如果是回答的话，要把问题的id传过来
+  },
+  //选择器选择方法
+  bindPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value
+    })
   },
   gotoShow: function(event) {
     var self = this;
@@ -45,7 +57,7 @@ Page({
       }
     })
   },
-
+  //输入内容即时改变
   bindinput: function (e) {
     this.setData({
       textareaValue: e.detail.value
@@ -55,14 +67,22 @@ Page({
   submitAction(){
     var self = this;
 
-
+//判断是否为空
+    if(this.data.textareaValue == ""){
+      wx.showToast({
+        title: this.data.type == "q" ? 'Post my questions' : 'Write dowm your thoughts...',
+        icon: 'none',
+        duration: 1000
+      })
+      return;
+    }
     var parDic = {};
     var url = "";
 
     if(this.data.type == "q"){
       parDic = {
         details: this.data.textareaValue,
-        type: "1"
+        type: parseInt(this.data.index) + 1
       }
       url = 'users/question/';
     }else{
@@ -80,6 +100,7 @@ Page({
       var length = self.data.tempFilePaths.length; //总数
       var count = 0; //第几张
 
+//这一步是判断是否传有图片
       if(self.data.tempFilePaths.length > 0){
         var xxzid = self.data.type == "q" ? res.data.question_id : res.data.answer_id;
         self.uploadOneByOne(self.data.tempFilePaths, successUp, failUp, count, length, xxzid);
@@ -92,9 +113,7 @@ Page({
 
         setTimeout(
           function () {
-            wx.navigateBack({
-              delta: 1,
-            })
+            self.jumpWorkVC();
           }, 1000);
        
       }
@@ -112,7 +131,7 @@ Page({
     wx.showLoading({
       title: '正在上传第' + count + '张',
     })
-    var testUrl = "http://192.168.101.22:8001/users/picture/";
+    var testUrl = app.globalData.hosturl +  "users/picture/";
     var self = this;
 
     wx.uploadFile({
@@ -142,12 +161,12 @@ Page({
           wx.showToast({
             title: '上传成功' + successUp,
             icon: 'success',
-            duration: 2000
+            duration: 1000
           })
-          wx.navigateBack({
-            delta: 1,
-            duration: 2000
-          })
+          setTimeout(
+            function () {
+              self.jumpWorkVC();
+            }, 2000);
         } else {
           //递归调用，上传下一张
           that.uploadOneByOne(imgPaths, successUp, failUp, count, length, xxzid);
@@ -163,57 +182,21 @@ Page({
     //判断是回答界面进来的还是提问界面进来的
     this.setData({
       type: options.type,
-      question_id: options.question_id
+      question_id: options.question_id,
     })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
+  jumpWorkVC: function (){ 
 
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   
-
-   sdfs
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
+if(this.data.type == "q"){
+  wx.navigateTo({
+    url: '../samehome/samehome?question_type=' + (parseInt(this.data.index) + 1) + '&qa=' +         this.data.type
+  })
+}else{
+  wx.navigateBack({
+    delta: 1,
+  })
+}
 
   }
 })

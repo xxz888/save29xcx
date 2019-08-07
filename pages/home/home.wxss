@@ -54,6 +54,8 @@ overflow: hidden;
 -webkit-line-clamp: 4;    
 
 }
-
+.itemLeft{
+  text-align: right;
+}
 
 /*feed-item part is in app.wxss for multiplexing*/
