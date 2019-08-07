@@ -3,6 +3,7 @@ var index_next = require('../data/data_index_next.js')
 var discovery = require('../data/data_discovery.js')
 var discovery_next = require('../data/data_discovery_next.js')
 var base64hash = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+var app = getApp()
 
 
 
@@ -13,10 +14,8 @@ function SEND(path, method, data, success, fail) {
   if(par.token){
     headerDic.Authorization = "JWT " + par.token;
   }
-  var testUrl   =   "http://192.168.101.22:8001/";
-  var formalUrl =   "http://thegdlife.com:8001/";
   wx.request({
-    url: testUrl + path,
+    url: app.globalData.hosturl + path,
     header: headerDic,
     method: method,
     data: data,

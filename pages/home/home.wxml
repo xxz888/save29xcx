@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<scroll-view scroll-y="true" class="container" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+<scroll-view scroll-y="true" class="container" bindscrolltoupper="upper" upper-threshold="5" lower-threshold="5" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
   <view class="search">
     <view class="search-left">
       <image src="{{searchImg}}"></image>
@@ -41,7 +41,7 @@
           <view class="flex-item itemLeft">
             <image 
             class="answer-image" 
-            src="{{'http://192.168.101.22:8001/' + item.pic_list[0].picture}}"></image>
+            src="{{hosturl + item.pic_list[0].picture}}"></image>
           </view>
         </view>
       </view>

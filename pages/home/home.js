@@ -8,7 +8,7 @@ Page({
     page:1,
     bindinputValue:"",
     searchImg: app.globalData.host + "搜索.png",
-
+    hosturl:app.globalData.hosturl
   },
 
   //搜索按钮

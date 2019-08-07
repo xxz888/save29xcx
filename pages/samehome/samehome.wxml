@@ -41,7 +41,7 @@
           <view class="flex-item itemLeft">
             <image 
             class="answer-image" 
-            src="{{'http://192.168.101.22:8001/' + item.pic_list[0].picture}}"></image>
+            src="{{hosturl + item.pic_list[0].picture}}"></image>
           </view>
         </view>
       </view>

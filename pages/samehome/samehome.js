@@ -10,7 +10,9 @@ Page({
     bindinputValue: "",
     type_:"", //type
     whereCome:0,    // 0代表我的界面 1代表问题和回答 
-    qa:""
+    qa:"",
+    hosturl: app.globalData.hosturl
+
   },
 
   //搜索按钮
@@ -69,7 +71,10 @@ Page({
       })
     }
 
+  },
+  onShow:function(){
     this.getVCData(this.data.page);
+
   },
   getVCData: function (page) {
     var par = "";
@@ -120,7 +125,7 @@ Page({
   },
   lower: function (e) {
     this.setData({
-      page: this.data.page++
+      page: this.data.page+1
     })
     wx.showNavigationBarLoading();
     var self = this;
